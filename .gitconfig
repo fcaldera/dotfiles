@@ -1,0 +1,23 @@
+[user]
+	name = Fernando Caldera
+ 	email = fer.caldera@gmail.com
+[color]
+	ui = auto
+[pull]
+	rebase = true
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	unstage = reset HEAD --
+	last = log -1 HEAD
+	visual = !gitk
+	alias = config --get-regexp '^alias\\.'
+	fa = fetch --all
+	cm = checkout master
+	rc = rebase --continue
+[push]
+	autoSetupRemote = true
+[init]
+	defaultBranch = main
