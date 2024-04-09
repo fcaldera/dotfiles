@@ -17,7 +17,10 @@
 	fa = fetch --all
 	cm = checkout master
 	rc = rebase --continue
+	ca = commit --amend --no-edit
 [push]
 	autoSetupRemote = true
 [init]
 	defaultBranch = main
+[core]
+	editor = nvim
