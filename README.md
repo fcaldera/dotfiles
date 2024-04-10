@@ -1,4 +1,6 @@
-# Fernando's dotfiles
+# Dotfiles
 
-My developers machine configuration files.
+Configuration and tools for my macOS dev machine. 
+
+
 
