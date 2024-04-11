@@ -49,10 +49,6 @@ return { -- Collection of various small independent plugins/modules
 
     vim.keymap.set("n", "<leader>kn", minifiles.open, { desc = "[N]avigate files" })
 
-    vim.keymap.set("n", "<leader>kc", function()
-      minifiles.open(vim.api.nvim_buf_get_name(0), true)
-    end, { desc = "Nagivate [C]urrent file directory" })
-
     -- ... and there is more!
     --  Check out: https://github.com/echasnovski/mini.nvim
   end,
