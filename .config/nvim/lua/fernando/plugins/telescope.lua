@@ -42,6 +42,17 @@ return { -- Fuzzy Finder (files, lsp, etc)
     -- Telescope picker. This is really useful to discover what Telescope can
     -- do as well as how to actually do it!
 
+    local config = require("telescope.config")
+
+    -- Clone the default Telescope configuration
+    local vimgrep_arguments = { unpack(config.values.vimgrep_arguments) }
+
+    -- I want to search in hidden/dot files.
+    table.insert(vimgrep_arguments, "--hidden")
+    -- I don't want to search in the `.git` directory.
+    table.insert(vimgrep_arguments, "--glob")
+    table.insert(vimgrep_arguments, "!**/.git/*")
+
     -- [[ Configure Telescope ]]
     -- See `:help telescope` and `:help telescope.setup()`
     require("telescope").setup({
@@ -49,12 +60,19 @@ return { -- Fuzzy Finder (files, lsp, etc)
       --  All the info you're looking for is in `:help telescope.setup()`
       --
       defaults = {
-        sorting_strategy = "ascending",
-        layout_config = {
-          prompt_position = "top",
+        -- `hidden = true` is not supported in text grep commands.
+        vimgrep_arguments = vimgrep_arguments, 
+        -- sorting_strategy = "ascending",
+        -- layout_config = {
+        --   prompt_position = "top",
+        -- },
+      },
+      pickers = {
+        find_files = {
+          -- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
+          find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
         },
       },
-      -- pickers = {}
       extensions = {
         ["ui-select"] = {
           require("telescope.themes").get_dropdown(),
