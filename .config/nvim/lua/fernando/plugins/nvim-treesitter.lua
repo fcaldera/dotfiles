@@ -66,6 +66,5 @@ return { -- Highlight, edit, and navigate code
     })
 
     vim.treesitter.language.register("heex", "eelixir")
-    vim.keymap.set("n", "[C", require("treesitter-context").go_to_context, { desc = "Goto context", silent = true })
   end,
 }
