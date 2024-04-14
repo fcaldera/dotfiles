@@ -32,9 +32,7 @@ return {
         hijack_netrw_behavior = "disabled",
         filtered_items = {
           hide_dotfiles = false,
-          hide_by_name = {
-            ".git"
-          }
+          hide_by_name = { ".git" },
         },
       },
     })
