@@ -60,9 +60,9 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 -- Show git status
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git, { desc = "[G]it [S]tatus" })
-vim.keymap.set("n", "<leader>gw", vim.cmd.GBrowse, { desc = "[G]it bro[W]se" })
-vim.keymap.set("n", "<leader>gr", "<cmd>!gh repo view -w<CR><ESC>", { desc = "[G]it view [R]epo", silent = true })
-vim.keymap.set("n", "<leader>gp", "<cmd>!gh pr view -w<CR>", { desc = "[G]it view [P]ull request", silent = true })
+vim.keymap.set("n", "<leader>gw", vim.cmd.GBrowse, { desc = "Bro[W]se file" })
+vim.keymap.set("n", "<leader>gr", "<cmd>!gh repo view -w<CR><ESC>", { desc = "Browse [R]epo", silent = true })
+vim.keymap.set("n", "<leader>gp", "<cmd>!gh pr view -w<CR>", { desc = "Browse [P]ull request", silent = true })
 
 -- Show undo tree panel
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "[U]ndo tree" })
