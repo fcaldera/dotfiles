@@ -26,6 +26,10 @@ return { -- Autoformat
     formatters_by_ft = {
       lua = { "stylua" },
       javascript = { { "prettierd", "prettier" } },
+      javascriptreact = { { "prettierd", "prettier" } },
+      json = { { "prettierd", "prettier" } },
+      css = { { "prettierd", "prettier" } },
+      markdown = { { "prettierd", "prettier" } },
       -- Conform can also run multiple formatters sequentially
       -- python = { "isort", "black" },
     },
