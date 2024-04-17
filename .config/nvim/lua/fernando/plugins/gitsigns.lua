@@ -34,8 +34,6 @@ return {
         return "<Ignore>"
       end, { expr = true, desc = "Jump to previous hunk" })
 
-      map("n", "<leader>gh", gs.preview_hunk, { desc = "Preview [H]unk" })
-      map("n", "<leader>gb", function() gs.blame_line({ full = true }) end, { desc = "[B]lame line" })
     end,
   },
 }

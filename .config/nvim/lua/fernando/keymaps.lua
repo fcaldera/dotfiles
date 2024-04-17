@@ -58,11 +58,15 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 -- [[ My custom keymaps ]]
 
--- Show git status
-vim.keymap.set("n", "<leader>gs", vim.cmd.Git, { desc = "[G]it [S]tatus" })
-vim.keymap.set("n", "<leader>gw", vim.cmd.GBrowse, { desc = "Bro[W]se file" })
-vim.keymap.set("n", "<leader>gr", "<cmd>!gh repo view -w<CR><ESC>", { desc = "Browse [R]epo", silent = true })
-vim.keymap.set("n", "<leader>gp", "<cmd>!gh pr view -w<CR>", { desc = "Browse [P]ull request", silent = true })
+-- Git keymaps
+vim.keymap.set("n", "<leader>gs", vim.cmd.Git, { desc = "Git [S]tatus" })
+vim.keymap.set("n", "<leader>gd", vim.cmd.DiffviewOpen, { desc = "Git [D]iff" })
+vim.keymap.set("n", "<leader>gh", vim.cmd.DiffviewFileHistory, { desc = "Git [H]istory" })
+
+-- Browse keymaps
+vim.keymap.set("n", "<leader>bf", vim.cmd.GBrowse, { desc = "Browse [F]ile" })
+vim.keymap.set("n", "<leader>br", "<cmd>!gh repo view -w<CR><ESC>", { desc = "Browse [R]epo", silent = true })
+vim.keymap.set("n", "<leader>bp", "<cmd>!gh pr view -w<CR>", { desc = "Browse [P]ull request", silent = true })
 
 -- Show undo tree panel
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "[U]ndo tree" })
@@ -98,5 +102,8 @@ vim.keymap.set(
 -- The primeagen said that Q was the worst place in the universe.
 -- I still don't know why, but here we are!
 vim.keymap.set("n", "Q", "<nop>")
+
+-- Tab keymamps
+vim.keymap.set("n", "<leader>tq", "<cmd>tabclose<CR>", { desc = "Close current tab" })
 
 -- vim: ts=2 sts=2 sw=2 et
