@@ -1,5 +1,7 @@
-vim.opt.wrap = true
-vim.opt.textwidth = 72
-vim.opt.colorcolumn = "73"
-vim.opt.spelllang = "en_us"
-vim.opt.spell = true
+local set = vim.opt_local
+
+set.wrap = true
+set.textwidth = 72
+set.colorcolumn = "73"
+set.spelllang = "en_us"
+set.spell = true
