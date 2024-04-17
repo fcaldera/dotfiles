@@ -99,9 +99,4 @@ vim.keymap.set(
 -- I still don't know why, but here we are!
 vim.keymap.set("n", "Q", "<nop>")
 
--- Buffer commands
-vim.keymap.set("n", "<leader>kx", ":bd<CR>", { desc = "Close current buffer" })
-vim.keymap.set("n", "<leader>j", ":bn<CR>", { desc = "Go to next buffer" })
-vim.keymap.set("n", "<leader>;", ":bp<CR>", { desc = "Go to previous buffer" })
-
 -- vim: ts=2 sts=2 sw=2 et

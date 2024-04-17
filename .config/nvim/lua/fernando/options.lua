@@ -64,7 +64,7 @@ vim.opt.scrolloff = 10
 -- vim.opt.completeopt = "menuone,noselect"
 
 -- NOTE: You should make sure your terminal supports this
--- vim.opt.termguicolors = true
+vim.opt.termguicolors = true
 
 -- tabs & indentation
 -- vim.opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
