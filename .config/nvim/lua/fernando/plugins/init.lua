@@ -10,5 +10,4 @@ return {
     opts = { signs = false },
   },
   "sindrets/diffview.nvim",
-  "github/copilot.vim",
 }
