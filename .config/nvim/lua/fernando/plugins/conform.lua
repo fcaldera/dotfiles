@@ -8,7 +8,7 @@ return { -- Autoformat
         require("conform").format({ async = true, lsp_fallback = true })
       end,
       mode = "",
-      desc = "[F]ormat buffer",
+      desc = "[F]ormat current buffer",
     },
   },
   opts = {
@@ -25,11 +25,15 @@ return { -- Autoformat
     -- end,
     formatters_by_ft = {
       lua = { "stylua" },
-      javascript = { { "prettierd", "prettier" } },
-      javascriptreact = { { "prettierd", "prettier" } },
-      json = { { "prettierd", "prettier" } },
-      css = { { "prettierd", "prettier" } },
-      markdown = { { "prettierd", "prettier" } },
+      javascript = { "prettierd" },
+      typescript = { "prettierd" },
+      javascriptreact = { "prettierd" },
+      typescriptreact = { "prettierd" },
+      css = { "prettierd" },
+      html = { "prettierd" },
+      json = { "prettierd" },
+      yaml = { "prettierd" },
+      markdown = { "prettierd" },
       -- Conform can also run multiple formatters sequentially
       -- python = { "isort", "black" },
     },
