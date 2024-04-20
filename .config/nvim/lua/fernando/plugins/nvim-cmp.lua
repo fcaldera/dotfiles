@@ -91,6 +91,9 @@ return { -- Autocompletion
           end
         end, { "i", "s" }),
 
+        -- Abort completion
+        ['<C-e>'] = cmp.mapping.abort(),
+
         -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
         --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
       }),
