@@ -9,5 +9,6 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = { signs = false },
   },
-  "sindrets/diffview.nvim"
+  "sindrets/diffview.nvim",
+  "github/copilot.vim",
 }
