@@ -68,6 +68,9 @@ vim.keymap.set("n", "<leader>bf", vim.cmd.GBrowse, { desc = "Browse [F]ile" })
 vim.keymap.set("n", "<leader>br", "<cmd>!gh repo view -w<CR><ESC>", { desc = "Browse [R]epo", silent = true })
 vim.keymap.set("n", "<leader>bp", "<cmd>!gh pr view -w<CR>", { desc = "Browse [P]ull request", silent = true })
 
+-- Komands keymaps
+vim.keymap.set("n", "<leader>kr", "<cmd>edit %<CR>", { desc = "[R]efresh current buffer" })
+
 -- Show undo tree panel
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "[U]ndo tree" })
 
@@ -76,8 +79,8 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected lines down"
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selected lines up" })
 
 -- Alternative delete/replace: avoid registers
-vim.keymap.set({ "n", "v" }, "<leader>kd", '"_d', { desc = "[D]elete to the void register" })
-vim.keymap.set("x", "<leader>kp", [["_dP]], { desc = "[P]aste to void register" })
+-- vim.keymap.set({ "n", "v" }, "<leader>kd", '"_d', { desc = "[D]elete to the void register" })
+-- vim.keymap.set("x", "<leader>kp", [["_dP]], { desc = "[P]aste to void register" })
 
 -- Keep the cursor in the middle
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -86,12 +89,12 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- Replace all of the word-under-cursor occurrences
-vim.keymap.set(
-  "n",
-  "<leader>kr",
-  [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
-  { desc = "[R]eplace all with..." }
-)
+-- vim.keymap.set(
+--   "n",
+--   "<leader>kr",
+--   [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+--   { desc = "[R]eplace all with..." }
+-- )
 
 -- Quickfix navigation. Commented until I know what the heck is that
 -- vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
