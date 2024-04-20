@@ -37,7 +37,6 @@ return {
       },
     })
 
-    vim.keymap.set("n", "<leader>ke", ":Neotree show reveal_force_cwd current<CR>", { desc = "Show file [E]xplorer" })
-    vim.keymap.set("n", "<leader>kt", ":Neotree toggle focus reveal left<CR>", { desc = "Toggle file [T]ree" })
+    vim.keymap.set("n", "<leader>ke", ":Neotree show reveal_force_cwd current<CR>", { desc = "[E]xplore files tree" })
   end,
 }

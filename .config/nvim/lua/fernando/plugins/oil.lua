@@ -20,6 +20,6 @@ return {
       },
     })
 
-    vim.keymap.set("n", "<leader>ko", "<cmd>Oil<CR>", { desc = "[O]il file explorer" })
+    vim.keymap.set("n", "<leader>kd", "<cmd>Oil<CR>", { desc = "[D]irectory browser" })
   end,
 }

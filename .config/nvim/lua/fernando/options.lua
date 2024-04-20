@@ -83,7 +83,4 @@ vim.opt.guicursor = ""
 vim.opt.spelllang = "en_us"
 vim.opt.spell = true
 
--- File explorer
-vim.g.netrw_preview = 1 -- Preview with vertical split
-
 -- vim: ts=2 sts=2 sw=2 et
