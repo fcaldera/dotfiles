@@ -72,7 +72,7 @@ vim.keymap.set("n", "<leader>bp", "<cmd>!gh pr view -w<CR>", { desc = "Browse [P
 vim.keymap.set("n", "<leader>kr", "<cmd>edit %<CR>", { desc = "[R]efresh current buffer" })
 
 -- Show undo tree panel
-vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "[U]ndo tree" })
+vim.keymap.set("n", "<leader>ku", vim.cmd.UndotreeToggle, { desc = "[U]ndo tree" })
 
 -- Move selected lines up and down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected lines down" })
