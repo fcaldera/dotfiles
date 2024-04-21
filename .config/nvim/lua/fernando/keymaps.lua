@@ -69,7 +69,7 @@ vim.keymap.set("n", "<leader>br", "<cmd>!gh repo view -w<CR><ESC>", { desc = "Br
 vim.keymap.set("n", "<leader>bp", "<cmd>!gh pr view -w<CR>", { desc = "Browse [P]ull request", silent = true })
 
 -- Komands keymaps
-vim.keymap.set("n", "<leader>kr", "<cmd>edit %<CR>", { desc = "[R]efresh current buffer" })
+vim.keymap.set("n", "<leader>kr", "<cmd>edit! %<CR>", { desc = "[R]eload current buffer" })
 
 -- Show undo tree panel
 vim.keymap.set("n", "<leader>ku", vim.cmd.UndotreeToggle, { desc = "[U]ndo tree" })

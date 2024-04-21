@@ -13,6 +13,8 @@ return {
     current_line_blame = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
     -- stylua: ignore
     on_attach = function(bufnr)
+      local gitsigns = require 'gitsigns'
+
       local function map(mode, l, r, opts)
         opts = opts or {}
         opts.buffer = bufnr
@@ -26,14 +28,17 @@ return {
         if vim.wo.diff then return "]c" end
         vim.schedule(function() gs.next_hunk() end)
         return "<Ignore>"
-      end, { expr = true, desc = "Jump to next hunk" })
+      end, { expr = true, desc = "Jump to next git [c]hange" })
 
       map({ "n", "v" }, "[c", function()
         if vim.wo.diff then return "[c" end
         vim.schedule(function() gs.prev_hunk() end)
         return "<Ignore>"
-      end, { expr = true, desc = "Jump to previous hunk" })
+      end, { expr = true, desc = "Jump to previous git [c]hange" })
 
+      -- Toggles
+      map('n', '<leader>tb', gitsigns.toggle_current_line_blame, { desc = '[T]oggle git show [b]lame line' })
+      map('n', '<leader>tD', gitsigns.toggle_deleted, { desc = '[T]oggle git show [D]eleted' })
     end,
   },
 }
