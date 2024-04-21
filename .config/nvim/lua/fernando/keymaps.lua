@@ -70,6 +70,8 @@ vim.keymap.set("n", "<leader>bp", "<cmd>!gh pr view -w<CR>", { desc = "Browse [P
 
 -- Komands keymaps
 vim.keymap.set("n", "<leader>kr", "<cmd>edit! %<CR>", { desc = "[R]eload current buffer" })
+vim.keymap.set("n", "<leader>kw", "<cmd>w<CR>", { desc = "[W]rite to disk" })
+vim.keymap.set("n", "<leader>kq", "<cmd>q<CR>", { desc = "[Q]uit" })
 
 -- Show undo tree panel
 vim.keymap.set("n", "<leader>ku", vim.cmd.UndotreeToggle, { desc = "[U]ndo tree" })

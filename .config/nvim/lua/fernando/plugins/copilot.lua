@@ -8,6 +8,7 @@ return {
 
     vim.keymap.set("n", "<leader>tc", function()
       vim.g.copilot_enabled = not vim.g.copilot_enabled
+      print("Copilot " .. (vim.g.copilot_enabled and "enabled" or "disabled"))
     end, { desc = "[T]oggle [c]opilot" })
 
     vim.g.copilot_no_tab_map = true
