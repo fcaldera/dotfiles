@@ -1,6 +1,18 @@
 return {
-  "github/copilot.vim",
+  "CopilotC-Nvim/CopilotChat.nvim",
+  branch = "canary",
+  dependencies = {
+    "github/copilot.vim", -- or "zbirenbaum/copilot.lua",
+    "nvim-lua/plenary.nvim", -- for curl, log wrapper
+  },
   config = function()
+    require("CopilotChat").setup({
+      debug = false, -- Enable debugging
+      window = {
+        width = 0.25,
+      },
+    })
+
     vim.keymap.set("i", "<C-f>", 'copilot#Accept("\\<CR>")', {
       expr = true,
       replace_keycodes = false,
