@@ -53,7 +53,18 @@ return { -- Fuzzy Finder (files, lsp, etc)
         --   prompt_position = "top",
         -- },
       },
-      pickers = {},
+      pickers = {
+        buffers = {
+          mappings = {
+            i = {
+              ["<c-d>"] = "delete_buffer",
+            },
+            n = {
+              ["d"] = "delete_buffer",
+            },
+          },
+        },
+      },
       extensions = {
         ["ui-select"] = {
           require("telescope.themes").get_dropdown(),
