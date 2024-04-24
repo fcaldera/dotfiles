@@ -23,6 +23,8 @@ return {
       print("Copilot " .. (vim.g.copilot_enabled and "enabled" or "disabled"))
     end, { desc = "[T]oggle [c]opilot" })
 
+   vim.keymap.set("n", "<leader>cc", "<cmd>CopilotChatToggle<CR>", { desc = "[C]opilot [c]hat" })
+
     vim.g.copilot_no_tab_map = true
     vim.g.copilot_enabled = false
   end,
