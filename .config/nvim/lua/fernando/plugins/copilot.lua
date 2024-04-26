@@ -9,7 +9,7 @@ return {
     require("CopilotChat").setup({
       debug = false, -- Enable debugging
       window = {
-        width = 0.25,
+        width = 0.5,
       },
     })
 
@@ -23,7 +23,14 @@ return {
       print("Copilot " .. (vim.g.copilot_enabled and "enabled" or "disabled"))
     end, { desc = "[T]oggle [c]opilot" })
 
-   vim.keymap.set("n", "<leader>cc", "<cmd>CopilotChatToggle<CR>", { desc = "[C]opilot [c]hat" })
+    vim.keymap.set("n", "<leader>cct", "<cmd>CopilotChatOpen<CR>", { desc = "CopilotChat - [O]pen" })
+
+    vim.keymap.set("n", "<leader>ccq", function()
+      local input = vim.fn.input("Quick Chat: ")
+      if input ~= "" then
+        require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
+      end
+    end, { desc = "CopilotChat - Quick chat" })
 
     vim.g.copilot_no_tab_map = true
     vim.g.copilot_enabled = false
