@@ -32,7 +32,12 @@ return { -- Collection of various small independent plugins/modules
           local fileinfo = MiniStatusline.section_fileinfo({ trunc_width = 120 })
           local location = "%2l:%-2v" -- MiniStatusline.section_location({ trunc_width = 75 })
           local search = MiniStatusline.section_searchcount({ trunc_width = 75 })
-          local copilot = vim.g.copilot_enabled and " " or ""
+          local copilot = ""
+
+          local ok, clients = pcall(vim.lsp.get_active_clients, { name = "GitHub Copilot", bufnr = 0 })
+          if ok and #clients > 0 then
+            copilot = vim.g.copilot_enabled and " " or " "
+          end
 
           return MiniStatusline.combine_groups({
             { hl = mode_hl, strings = { string.upper(mode) } },
