@@ -92,7 +92,7 @@ return { -- Autocompletion
         end, { "i", "s" }),
 
         -- Abort completion
-        ['<C-e>'] = cmp.mapping.abort(),
+        ["<C-e>"] = cmp.mapping.abort(),
 
         -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
         --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
@@ -103,5 +103,13 @@ return { -- Autocompletion
         { name = "path" },
       },
     })
+
+    -- Works but causes a flash of the completion menu
+    cmp.event:on("menu_opened", function()
+      if vim.g.copilot_enabled then
+        vim.fn["copilot#Dismiss"]()
+      end
+    end)
+
   end,
 }
