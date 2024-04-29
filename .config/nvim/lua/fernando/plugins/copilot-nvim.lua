@@ -1,10 +1,10 @@
-
 return {
   "github/copilot.vim",
   event = "InsertEnter",
   config = function()
     vim.g.copilot_no_tab_map = true
     vim.g.copilot_enabled = false
+    vim.g.copilot_hide_during_completion = 0
 
     vim.keymap.set("n", "<leader>tc", function()
       vim.g.copilot_enabled = not vim.g.copilot_enabled
