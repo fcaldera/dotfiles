@@ -151,9 +151,8 @@ return { -- LSP Configuration & Plugins
         },
       },
       cssls = {},
-      html = { filetypes = { "html", "eelixir", "heex" } },
-      -- emmet_ls = { filetypes = { "css", "html", "javascriptreact", "vue", "eelixir", "heex" } },
-      volar = { filetypes = { "vue", "typescript", "javascript" } },
+      html = {},
+      volar = {},
       elixirls = {},
     }
 
@@ -172,7 +171,6 @@ return { -- LSP Configuration & Plugins
       "stylua", -- Used to format Lua code
       "prettierd",
       "eslint_d",
-      "vale", -- Markdown linter
     })
     require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
