@@ -1,1 +1,8 @@
 !.config/
+!.vitepress/
+!.github/
+!.storybook/
+!.editorconfig
+!.eslintrc*
+!.prettierrc*
+!.rgignore
