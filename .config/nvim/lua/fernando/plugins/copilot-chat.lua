@@ -15,7 +15,16 @@ return {
       auto_insert_mode = false,
       context = "buffer",
       clear_chat_on_new_prompt = false,
-      mappings = { close = { insert = "" } },
+      mappings = {
+        close = {
+          normal = "gq",
+          insert = "",
+        },
+        reset = {
+          normal = "gr",
+          insert = "",
+        },
+      },
       prompts = {
         BetterNamings = "/COPILOT_GENERATE Provide better names for the following variables and functions.",
         -- Text related prompts
@@ -26,18 +35,18 @@ return {
       },
     })
 
-    vim.keymap.set("n", "<leader>kc", "<cmd>CopilotChatToggle<CR>", { desc = "[C]hat window" })
+    vim.keymap.set("n", "<leader>cc", "<cmd>CopilotChatOpen<CR>", { desc = "Copilot: [C]hat window" })
 
-    vim.keymap.set("n", "<leader>ka", function()
+    vim.keymap.set("n", "<leader>cA", function()
       local input = vim.fn.input("Ask Copilot: ")
       if input ~= "" then
         require("CopilotChat").ask(input)
       end
-    end, { desc = "[A]sk Copilot..." })
+    end, { desc = "Copilot: [A]sk..." })
 
     vim.keymap.set("n", "<leader>cp", function()
       local actions = require("CopilotChat.actions")
       require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
-    end, { desc = "CopilotChat: [P]rompt actions" })
+    end, { desc = "Copilot: [P]rompt actions" })
   end,
 }

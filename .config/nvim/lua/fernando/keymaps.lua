@@ -58,23 +58,30 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 -- [[ My custom keymaps ]]
 
--- Git keymaps
+-- Git
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git, { desc = "Git [S]tatus" })
 vim.keymap.set("n", "<leader>gd", vim.cmd.DiffviewOpen, { desc = "Git [D]iff" })
 vim.keymap.set("n", "<leader>gh", vim.cmd.DiffviewFileHistory, { desc = "Git [H]istory" })
 
--- Browse keymaps
-vim.keymap.set("n", "<leader>bf", vim.cmd.GBrowse, { desc = "Browse [F]ile" })
-vim.keymap.set("n", "<leader>br", "<cmd>!gh repo view -w<CR><ESC>", { desc = "Browse [R]epo", silent = true })
-vim.keymap.set("n", "<leader>bp", "<cmd>!gh pr view -w<CR>", { desc = "Browse [P]ull request", silent = true })
+-- Browse/View
+vim.keymap.set("n", "<leader>vf", vim.cmd.GBrowse, { desc = "[V]iew [F]ile" })
+vim.keymap.set("n", "<leader>vr", "<cmd>!gh repo view -w<CR><ESC>", { desc = "[V]iew [R]epo", silent = true })
+vim.keymap.set("n", "<leader>vp", "<cmd>!gh pr view -w<CR>", { desc = "[V]iew [P]ull request", silent = true })
+
+-- Buffers
+vim.keymap.set("n", "<leader>bd", "<cmd>bd %<CR>", { desc = "[B]uffer [D]elete" })
+
+-- Toggles
+vim.keymap.set("n", "<leader>tc", function()
+  vim.g.copilot_enabled = not vim.g.copilot_enabled
+  require("cmp").setup.buffer({ enabled = not vim.g.copilot_enabled })
+end, { desc = "[T]oggle [C]ompletions" })
 
 -- Komands keymaps
-vim.keymap.set("n", "<leader>kr", "<cmd>edit! %<CR>", { desc = "[R]eload current buffer" })
+vim.keymap.set("n", "<leader>kr", "<cmd>edit! %<CR>", { desc = "[R]eload file" })
 vim.keymap.set("n", "<leader>kw", "<cmd>w<CR>", { desc = "[W]rite to disk" })
-vim.keymap.set("n", "<leader>kq", "<cmd>q<CR>", { desc = "[Q]uit" })
-
--- Show undo tree panel
 vim.keymap.set("n", "<leader>ku", vim.cmd.UndotreeToggle, { desc = "[U]ndo tree" })
+vim.keymap.set("n", "<leader>kt", "<cmd>tabclose<CR>", { desc = "[T]ab close" })
 
 -- Move selected lines up and down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected lines down" })
@@ -108,7 +115,5 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- I still don't know why, but here we are!
 vim.keymap.set("n", "Q", "<nop>")
 
--- Tab keymamps
-vim.keymap.set("n", "<leader>tq", "<cmd>tabclose<CR>", { desc = "Close current tab" })
 
 -- vim: ts=2 sts=2 sw=2 et

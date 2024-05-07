@@ -103,13 +103,5 @@ return { -- Autocompletion
         { name = "path" },
       },
     })
-
-    -- Works but causes a flash of the completion menu
-    cmp.event:on("menu_opened", function()
-      if vim.g.copilot_enabled then
-        vim.fn["copilot#Dismiss"]()
-      end
-    end)
-
   end,
 }

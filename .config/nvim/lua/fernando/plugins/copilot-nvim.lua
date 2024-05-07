@@ -6,11 +6,13 @@ return {
     vim.g.copilot_enabled = false
     vim.g.copilot_hide_during_completion = true
 
-    vim.keymap.set("n", "<leader>tc", function()
-      vim.g.copilot_enabled = not vim.g.copilot_enabled
-    end, { desc = "[T]oggle [c]opilot" })
-
     vim.keymap.set("i", "<C-f>", 'copilot#Accept("\\<CR>")', {
+      expr = true,
+      replace_keycodes = false,
+    })
+
+    -- Alternative to match standard completions accept
+    vim.keymap.set("i", "<C-y>", 'copilot#Accept("\\<CR>")', {
       expr = true,
       replace_keycodes = false,
     })
@@ -24,7 +26,7 @@ return {
     vim.keymap.set("i", "<C-k>", "<Plug>(copilot-previous)", opts)
 
     -- Set <C-d> to dismiss suggestion
-    vim.keymap.set("i", "<C-d>", "<Plug>(copilot-dismiss)", opts)
+    vim.keymap.set("i", "<C-e>", "<Plug>(copilot-dismiss)", opts)
 
   end,
 }
