@@ -6,3 +6,4 @@
 !.eslintrc*
 !.prettierrc*
 !.rgignore
+!.tmux.conf
