@@ -152,7 +152,7 @@ return { -- LSP Configuration & Plugins
       },
       cssls = {},
       html = {},
-      volar = {},
+      volar = { filetypes = { "vue", "javascript", "typescript" } },
       elixirls = {},
     }
 
