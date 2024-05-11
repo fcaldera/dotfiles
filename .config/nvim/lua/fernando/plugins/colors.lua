@@ -27,11 +27,12 @@ local catppuccin = {
         markdown = true,
         mason = true,
         which_key = true,
+        diffview = true,
         mini = {
           enabled = true,
         },
         indent_blankline = {
-          enabled = true,
+          enabled = false,
           scope_color = "lavender",
           colored_indent_levels = false,
         },
