@@ -98,12 +98,13 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- Replace all of the word-under-cursor occurrences
--- vim.keymap.set(
---   "n",
---   "<leader>kr",
---   [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
---   { desc = "[R]eplace all with..." }
--- )
+vim.keymap.set(
+  "n",
+  "<leader>rw",
+  [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+  { desc = "[R]eplace [W]ord under cursor..." }
+)
+
 -- Increase/decrease numbers
 vim.keymap.set({ "n", "v" }, "+", "<C-a>", { desc = "Increase numbers" })
 vim.keymap.set({ "n", "v" }, "-", "<C-x>", { desc = "Decrease numbers" })
