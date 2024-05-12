@@ -13,7 +13,6 @@ return {
       separator = ":",
       show_help = false,
       auto_insert_mode = false,
-      context = "buffer",
       clear_chat_on_new_prompt = false,
       mappings = {
         close = {
@@ -35,16 +34,16 @@ return {
       },
     })
 
-    vim.keymap.set("n", "<leader>cc", "<cmd>CopilotChatOpen<CR>", { desc = "Copilot: [C]hat window" })
+    vim.keymap.set({ "n", "v" }, "<leader>cc", "<cmd>CopilotChatOpen<CR>", { desc = "Copilot: [C]hat window" })
 
-    vim.keymap.set("n", "<leader>cA", function()
+    vim.keymap.set({ "n", "v" }, "<leader>cA", function()
       local input = vim.fn.input("Ask Copilot: ")
       if input ~= "" then
-        require("CopilotChat").ask(input)
+        require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
       end
     end, { desc = "Copilot: [A]sk..." })
 
-    vim.keymap.set("n", "<leader>cp", function()
+    vim.keymap.set({ "n", "v" }, "<leader>cp", function()
       local actions = require("CopilotChat.actions")
       require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
     end, { desc = "Copilot: [P]rompt actions" })

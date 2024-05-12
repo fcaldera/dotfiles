@@ -89,7 +89,7 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selected lines up" }
 
 -- Alternative delete/replace: avoid registers
 -- vim.keymap.set({ "n", "v" }, "<leader>kd", '"_d', { desc = "[D]elete to the void register" })
-vim.keymap.set("x", "<leader>cp", [["_dP]], { desc = "[P]aste to void register" })
+-- vim.keymap.set("x", "<leader>cp", [["_dP]], { desc = "[P]aste to void register" })
 
 -- Keep the cursor in the middle
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -114,6 +114,5 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- The primeagen said that Q was the worst place in the universe.
 -- I still don't know why, but here we are!
 vim.keymap.set("n", "Q", "<nop>")
-
 
 -- vim: ts=2 sts=2 sw=2 et
