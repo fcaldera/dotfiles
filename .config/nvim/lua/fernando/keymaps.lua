@@ -104,6 +104,9 @@ vim.keymap.set("n", "N", "Nzzzv")
 --   [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
 --   { desc = "[R]eplace all with..." }
 -- )
+-- Increase/decrease numbers
+vim.keymap.set({ "n", "v" }, "+", "<C-a>", { desc = "Increase numbers" })
+vim.keymap.set({ "n", "v" }, "-", "<C-x>", { desc = "Decrease numbers" })
 
 -- Quickfix navigation. Commented until I know what the heck is that
 -- vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
