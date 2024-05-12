@@ -67,10 +67,10 @@ vim.opt.scrolloff = 10
 vim.opt.termguicolors = true
 
 -- tabs & indentation
--- vim.opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
--- vim.opt.softtabstop = 4
--- vim.opt.shiftwidth = 2 -- 2 spaces for indent width
--- vim.opt.expandtab = true -- expand tab to spaces
+vim.opt.tabstop = 2 -- spaces for tabs
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2 -- spaces for indent width
+vim.opt.expandtab = true -- expand tab to spaces
 vim.opt.autoindent = true -- copy indent from current line when starting new one
 vim.opt.smartindent = true
 vim.opt.colorcolumn = "80"
