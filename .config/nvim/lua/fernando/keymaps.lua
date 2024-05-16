@@ -74,7 +74,7 @@ vim.keymap.set("n", "<leader>bd", "<cmd>bd %<CR>", { desc = "[B]uffer [D]elete" 
 -- Toggles
 vim.keymap.set("n", "<leader>tc", function()
   vim.g.copilot_enabled = not vim.g.copilot_enabled
-  require("cmp").setup.buffer({ enabled = not vim.g.copilot_enabled })
+  require("cmp").setup({ enabled = not vim.g.copilot_enabled })
 end, { desc = "[T]oggle [C]ompletions" })
 
 -- Komands keymaps
