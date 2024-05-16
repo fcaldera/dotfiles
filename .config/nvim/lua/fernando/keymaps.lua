@@ -119,4 +119,10 @@ vim.keymap.set({ "n", "v" }, "-", "<C-x>", { desc = "Decrease numbers" })
 -- I still don't know why, but here we are!
 vim.keymap.set("n", "Q", "<nop>")
 
+-- Control the size of splits (height/width)
+vim.keymap.set("n", "<M-,>", "<c-w>5<")
+vim.keymap.set("n", "<M-.>", "<c-w>5>")
+vim.keymap.set("n", "<M-t>", "<C-W>+")
+vim.keymap.set("n", "<M-s>", "<C-W>-")
+
 -- vim: ts=2 sts=2 sw=2 et

@@ -83,4 +83,7 @@ vim.opt.guicursor = ""
 vim.opt.spelllang = "en_us"
 vim.opt.spell = true
 
+-- Don't have `o` add a comment
+vim.opt.formatoptions:remove("o")
+
 -- vim: ts=2 sts=2 sw=2 et
