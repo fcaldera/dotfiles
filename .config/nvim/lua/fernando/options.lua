@@ -1,7 +1,6 @@
 -- [[ Setting options ]]
 -- See `:help vim.opt`
--- NOTE: You can change these options as you wish!
---  For more options, you can see `:help option-list`
+-- More info: `:help option-list`
 
 -- Make line numbers default
 vim.opt.number = true
@@ -45,17 +44,17 @@ vim.opt.splitbelow = true
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
-vim.opt.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+-- vim.opt.list = true
+-- vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = "split"
 
 -- Show which line your cursor is on
-vim.opt.cursorline = true
+-- vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
+-- vim.opt.scrolloff = 10
 
 -- [[ Additional Settings ]]
 -- Options below were added by me and not present in kickstart.nvim
@@ -64,20 +63,20 @@ vim.opt.scrolloff = 10
 -- vim.opt.completeopt = "menuone,noselect"
 
 -- NOTE: You should make sure your terminal supports this
-vim.opt.termguicolors = true
+-- vim.opt.termguicolors = true
 
 -- tabs & indentation
-vim.opt.tabstop = 2 -- spaces for tabs
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2 -- spaces for indent width
-vim.opt.expandtab = true -- expand tab to spaces
-vim.opt.autoindent = true -- copy indent from current line when starting new one
-vim.opt.smartindent = true
-vim.opt.colorcolumn = "80"
-vim.opt.wrap = false
+-- vim.opt.tabstop = 2 -- spaces for tabs
+-- vim.opt.softtabstop = 2
+-- vim.opt.shiftwidth = 2 -- spaces for indent width
+-- vim.opt.expandtab = true -- expand tab to spaces
+-- vim.opt.autoindent = true -- copy indent from current line when starting new one
+-- vim.opt.smartindent = true
+-- vim.opt.colorcolumn = "80"
+-- vim.opt.wrap = false
 
 -- Always use block cursor
-vim.opt.guicursor = ""
+-- vim.opt.guicursor = ""
 
 -- Spell checker
 vim.opt.spelllang = "en_us"
