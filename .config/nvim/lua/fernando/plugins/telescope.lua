@@ -61,5 +61,30 @@ return {
     vim.keymap.set("n", "<leader>sn", function()
       builtin.find_files({ cwd = vim.fn.stdpath("config") })
     end, { desc = "[S]earch [N]eovim files" })
+
+    -- stylua: ignore
+    local builtin_colors = {
+      "zellner", "torte", "slate", "shine", "ron", "quiet", "peachpuff",
+      "pablo", "murphy", "lunaperche", "koehler", "industry", "evening", "elflord",
+      "desert", "delek", "default", "darkblue", "blue", "morning", "randomhue"
+    }
+
+    -- Shortcut for searching color schemes
+    vim.keymap.set("n", "<leader>sc", function()
+      local target = vim.fn.getcompletion
+
+      ---@diagnostic disable-next-line: duplicate-set-field
+      vim.fn.getcompletion = function()
+        return vim.tbl_filter(function(color)
+          return not vim.tbl_contains(builtin_colors, color)
+        end, target("", "color"))
+      end
+
+      builtin.colorscheme(require("telescope.themes").get_dropdown({
+        enable_preview = true,
+      }))
+
+      vim.fn.getcompletion = target
+    end, { desc = "[S]witch [C]olor scheme" })
   end,
 }
