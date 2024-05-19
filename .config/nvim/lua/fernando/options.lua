@@ -72,8 +72,8 @@ vim.opt.inccommand = "split"
 -- vim.opt.expandtab = true -- expand tab to spaces
 -- vim.opt.autoindent = true -- copy indent from current line when starting new one
 -- vim.opt.smartindent = true
--- vim.opt.colorcolumn = "80"
--- vim.opt.wrap = false
+vim.opt.colorcolumn = "80"
+vim.opt.wrap = false
 
 -- Always use block cursor
 -- vim.opt.guicursor = ""

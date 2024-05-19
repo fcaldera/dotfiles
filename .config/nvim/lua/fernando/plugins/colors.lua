@@ -8,7 +8,7 @@ return {
       require("kanagawa").setup({
         dimInactive = true,
         background = {
-          dark = "wave",
+          dark = "dragon",
           light = "lotus",
         },
         overrides = function(colors)

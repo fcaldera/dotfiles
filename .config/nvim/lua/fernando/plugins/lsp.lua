@@ -26,16 +26,21 @@ return {
     local lspconfig = require("lspconfig")
 
     local servers = {
-      --        bashls = true,
-      --        gopls = false,
       lua_ls = true,
-      --        rust_analyzer = false,
-      --        svelte = false,
-      --        templ = false,
       cssls = true,
+      html = true,
+      -- bashls = true,
+      -- gopls = false,
+      -- rust_analyzer = false,
+      -- svelte = false,
+      -- templ = false,
 
       -- Probably want to disable formatting for this lang server
       tsserver = true,
+
+      volar = {
+        filetypes = { "vue", "javascript", "typescript" },
+      },
 
       jsonls = {
         settings = {
@@ -58,10 +63,15 @@ return {
         },
       },
 
-      --        --lexical = {
-      --        --  cmd = { "/home/tjdevries/.local/share/nvim/mason/bin/lexical", "server" },
-      --        --  root_dir = require("lspconfig.util").root_pattern { "mix.exs" },
-      --        --},
+      elixirls = {
+        cmd = { "/Users/fernando/.local/share/nvim/mason/packages/elixir-ls/language_server.sh" },
+        root_dir = require("lspconfig.util").root_pattern({ "mix.exs" }),
+      },
+
+      -- lexical = {
+      --   cmd = { "/Users/fernando/.local/share/nvim/mason/packages/lexical/lexical", "server" },
+      --   root_dir = require("lspconfig.util").root_pattern({ "mix.exs" }),
+      -- },
     }
 
     local servers_to_install = vim.tbl_filter(function(key)
