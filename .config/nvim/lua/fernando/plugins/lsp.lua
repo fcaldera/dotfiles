@@ -121,7 +121,6 @@ return {
         vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = 0, desc = "LSP: [G]oto [R]eferences" })
         vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = 0, desc = "LSP: [G]oto [D]eclaration" })
         vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, { buffer = 0, desc = "LSP: [T]ype Definition" })
-        vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0, desc = "LSP: Hover Documentation" })
 
         vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { buffer = 0, desc = "LSP: [C]ode [R]ename" })
         vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { buffer = 0, desc = "LSP: [C]ode [A]action" })

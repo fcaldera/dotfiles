@@ -2,8 +2,8 @@ return {
   {
     "rebelot/kanagawa.nvim",
     name = "kanagawa",
-    -- priority = 1000,
-    -- lazy = false,
+    priority = 1000,
+    lazy = false,
     config = function()
       require("kanagawa").setup({
         dimInactive = true,
@@ -27,14 +27,14 @@ return {
         end,
       })
 
-      -- vim.cmd.colorscheme("kanagawa")
+      vim.cmd.colorscheme("kanagawa")
     end,
   },
   {
     "catppuccin/nvim",
     name = "catppuccin",
-    priority = 1000,
-    lazy = false,
+    -- priority = 1000,
+    -- lazy = false,
     config = function()
       require("catppuccin").setup({
         flavour = "mocha", -- latte, frappe, macchiato, mocha
@@ -56,12 +56,14 @@ return {
         },
       })
 
-      vim.cmd.colorscheme("catppuccin")
+      -- vim.cmd.colorscheme("catppuccin")
     end,
   },
   {
     "folke/tokyonight.nvim",
     name = "tokyonight",
+    -- priority = 1000,
+    -- lazy = false,
     config = function()
       require("tokyonight").setup({
         style = "night",
@@ -71,8 +73,8 @@ return {
   {
     "rose-pine/neovim",
     name = "rose-pine",
-    lazy = false,
-    priority = 1000,
+    -- priority = 1000,
+    -- lazy = false,
     config = function()
       require("rose-pine").setup({
         variant = "auto", -- auto, main, moon, or dawn
