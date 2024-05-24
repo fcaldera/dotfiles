@@ -7,7 +7,8 @@ return {
 
     ---@diagnostic disable-next-line missing-fields
     require("nvim-treesitter.configs").setup({
-      ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "diff" },
+      ensure_installed = { "diff", "elixir" },
+      auto_install = false,
       highlight = { enable = true },
     })
 

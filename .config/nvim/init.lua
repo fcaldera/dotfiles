@@ -1,18 +1,12 @@
--- Set <space> as the leader key
--- See `:help mapleader`
---  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
+--- Set <space> as the leader key
+--- NOTE: Must happen before plugins are required
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Set to true if you have a Nerd Font installed
 vim.g.have_nerd_font = true
 
-require("fernando.options")
-require("fernando.filetypes")
-
--- Install `lazy.nvim` plugin manager
--- https://github.com/folke/lazy.nvim
--- See `:help lazy.nvim.txt` for more info
+--- Install `lazy.nvim` plugin manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -24,8 +18,15 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   })
 end
+
+-- Add lazy to the `runtimepath`
+---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
+require("fernando.options")
+require("fernando.filetypes")
+
+-- Setup lazy and load my plugins
 require("lazy").setup({ { import = "fernando.plugins" } }, {
   change_detection = {
     notify = false,
