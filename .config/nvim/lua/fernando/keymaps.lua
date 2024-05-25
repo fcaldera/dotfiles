@@ -39,8 +39,17 @@ set("x", "<M-p>", [["_dP]]) -- Paste to void register
 local cmd = [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]
 set("n", "<leader>rw", cmd, { desc = "[R]eplace [W]ord under cursor..." })
 
--- Buffers keymaps
+-- Buffer keymaps
 set("n", "<leader>bd", "<cmd>bd %<CR>", { desc = "[B]uffer [D]elete" })
+
+-- Tab keymaps
+set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "[T]ab close" })
+
+-- Toggle keymaps
+set("n", "<leader>tc", function()
+  vim.g.copilot_enabled = not vim.g.copilot_enabled
+  require("cmp").setup({ enabled = not vim.g.copilot_enabled })
+end, { desc = "[T]oggle [C]ompletions" })
 
 -- Git keymaps
 set("n", "<leader>gs", vim.cmd.Git, { desc = "Git [S]tatus" })
@@ -52,17 +61,10 @@ set("n", "<leader>vf", vim.cmd.GBrowse, { desc = "[V]iew [F]ile" })
 set("n", "<leader>vr", "<cmd>!gh repo view -w<CR><ESC>", { desc = "[V]iew [R]epo", silent = true })
 set("n", "<leader>vp", "<cmd>!gh pr view -w<CR>", { desc = "[V]iew [P]ull request", silent = true })
 
--- Toggle keymaps
-set("n", "<leader>tc", function()
-  vim.g.copilot_enabled = not vim.g.copilot_enabled
-  require("cmp").setup({ enabled = not vim.g.copilot_enabled })
-end, { desc = "[T]oggle [C]ompletions" })
-
 -- Komands keymaps
 set("n", "<leader>kr", "<cmd>edit! %<CR>", { desc = "[R]eload file" })
 set("n", "<leader>kw", "<cmd>w<CR>", { desc = "[W]rite to disk" })
 set("n", "<leader>ku", vim.cmd.UndotreeToggle, { desc = "[U]ndo tree" })
-set("n", "<leader>kt", "<cmd>tabclose<CR>", { desc = "[T]ab close" })
 
 -- Quickfix navigation
 set("n", "<leader>qo", ":copen<CR>") -- open quickfix list

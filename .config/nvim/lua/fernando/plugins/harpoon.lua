@@ -9,6 +9,7 @@ return {
     -- stylua: ignore start
     vim.keymap.set("n", "<leader>ka", function() harpoon:list():add() end)
     vim.keymap.set("n", "<leader>ke", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+
     vim.keymap.set("n", "<leader>ks", function() harpoon:list():select(1) end)
     vim.keymap.set("n", "<leader>kd", function() harpoon:list():select(2) end)
     vim.keymap.set("n", "<leader>kf", function() harpoon:list():select(3) end)
