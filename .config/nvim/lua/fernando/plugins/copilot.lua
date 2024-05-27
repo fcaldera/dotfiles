@@ -64,6 +64,9 @@ return {
           -- Wording = "/COPILOT_GENERATE Improve the grammar and wording of the following text.",
           -- Concise = "/COPILOT_GENERATE Rewrite the following text to make it more concise.",
         },
+        window = {
+          width = 80,
+        },
       })
 
       vim.keymap.set({ "n", "v" }, "<leader>cc", "<cmd>CopilotChatOpen<CR>", { desc = "Copilot: [C]hat window" })
