@@ -150,6 +150,9 @@ return {
         cmd = { "/Users/fernando/.local/share/nvim/mason/packages/elixir-ls/language_server.sh" },
         root_dir = require("lspconfig.util").root_pattern({ "mix.exs" }),
       },
+
+      -- XML Language server { "xml", "xsd", "xsl", "xslt", "svg" }
+      lemminx = {},
     }
 
     -- Servers instalation
