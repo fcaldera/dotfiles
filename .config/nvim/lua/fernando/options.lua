@@ -74,6 +74,10 @@ opt.wrap = false
 -- Always use block cursor
 -- opt.guicursor = ""
 
+-- Spell check
+opt.spell = true
+opt.spelllang = "en_us"
+
 -- Don't have `o` add a comment
 opt.formatoptions:remove("o")
 
