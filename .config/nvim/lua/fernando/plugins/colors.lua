@@ -23,6 +23,9 @@ return {
             MiniStatuslineModeInsert = { bg = theme.diag.ok, fg = theme.ui.bg },
             MiniStatuslineModeReplace = { bg = theme.syn.constant, fg = theme.ui.bg },
             MiniStatuslineModeVisual = { bg = theme.syn.keyword, fg = theme.ui.bg },
+            TabLine = { bg = theme.ui.bg_m3, fg = theme.ui.special },
+            TabLineFill = { bg = theme.ui.bg_m3 },
+            TabLineSel = { fg = theme.ui.fg_dim, bg = theme.ui.bg_p1 },
           }
         end,
       })
