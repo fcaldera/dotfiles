@@ -155,7 +155,7 @@ return {
       lemminx = {},
     }
 
-    -- Servers instalation
+    -- Servers installation
     require("mason").setup()
     local ensure_installed = vim.tbl_keys(servers or {})
 
