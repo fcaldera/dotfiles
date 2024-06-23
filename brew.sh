@@ -20,8 +20,10 @@ brew install trash
 brew install tree
 
 # Fonts
-brew install font-monaspace
+brew install font-input
 brew install font-caskaydia-cove-nerd-font
+brew install font-hasklug-nerd-font
+# brew install font-monaspace
 
 # Apps
 brew install google-chrome
