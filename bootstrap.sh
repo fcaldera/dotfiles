@@ -19,6 +19,7 @@ DOTFILES=(
 	# ".config/feh"
 	# ".config/mpv"
 	".config/nvim"
+	".config/fish/config.fish"
 	".rgignore"
 	# ".local/share/fonts"
 )
