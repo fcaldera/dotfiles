@@ -20,6 +20,7 @@ DOTFILES=(
 	# ".config/mpv"
 	".config/nvim"
 	".config/fish/config.fish"
+	".config/fish/functions/keyremap.fish"
 	".rgignore"
 	# ".local/share/fonts"
 )
