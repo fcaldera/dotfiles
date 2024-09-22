@@ -5,8 +5,8 @@ set.breakindent = true -- Match indent on line break
 set.linebreak = true -- Line break on whole words
 
 -- Spell check
-set.spelllang = "en_us"
 set.spell = true
+set.spelllang = "en_us"
 
 -- Allow j/k when navigating wrapped lines
 vim.keymap.set("n", "j", "gj")
