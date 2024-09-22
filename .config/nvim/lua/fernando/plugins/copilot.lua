@@ -43,7 +43,7 @@ return {
         question_header = " Fernando",
         error_header = "  Error",
         separator = " ",
-        show_help = false,
+        show_help = true,
         auto_insert_mode = false,
         clear_chat_on_new_prompt = false,
         mappings = {
