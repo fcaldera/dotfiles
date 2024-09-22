@@ -37,13 +37,18 @@ return {
       "github/copilot.vim", -- or "zbirenbaum/copilot.lua",
       "nvim-lua/plenary.nvim", -- for curl, log wrapper
     },
+    event = "VeryLazy",
     config = function()
-      require("CopilotChat").setup({
+      local chat = require("CopilotChat")
+      local select = require("CopilotChat.select")
+
+      chat.setup({
         answer_header = "  GitHub Copilot",
         question_header = " Fernando",
         error_header = "  Error",
         separator = " ",
         show_help = true,
+        show_folds = false,
         auto_insert_mode = false,
         clear_chat_on_new_prompt = false,
         mappings = {
@@ -57,31 +62,39 @@ return {
           },
         },
         prompts = {
-          BetterNamings = "/COPILOT_GENERATE Provide better names for the following variables and functions.",
-          -- Text related prompts
-          Summarize = "/COPILOT_GENERATE Summarize the following text.",
-          Spelling = "/COPILOT_GENERATE Correct any grammar and spelling errors in the following text.",
-          Wording = "/COPILOT_GENERATE Improve the grammar and wording of the following text.",
-          Concise = "/COPILOT_GENERATE Rewrite the following text to make it more concise.",
+          BetterNamings = "Provide better names for the following variables and functions.",
+          Summarize = "Summarize the following text.",
+          Spelling = "Correct any grammar and spelling errors in the following text.",
+          Wording = "Improve the grammar andvim.keymap. wording of the following text.",
+          Concise = "Rewrite the following text to make it more concise.",
         },
         window = {
           width = 80,
         },
+        selection = function(source)
+          return select.visual(source) or select.buffer(source)
+        end,
       })
 
-      vim.keymap.set({ "n", "v" }, "<leader>cc", "<cmd>CopilotChatOpen<CR>", { desc = "Copilot: [C]hat window" })
+      vim.keymap.set({ "n", "v" }, "<leader>co", "<cmd>CopilotChatOpen<CR>", { desc = "CopilotChat: [O]pen" })
+      vim.keymap.set({ "n", "v" }, "<leader>cq", "<cmd>CopilotChatClose<CR>", { desc = "CopilotChat: [Q]uit" })
+      vim.keymap.set({ "n", "v" }, "<leader>cs", "<cmd>CopilotChatStop<CR>", { desc = "CopilotChat: [S]top" })
 
-      vim.keymap.set({ "n", "v" }, "<leader>cA", function()
+      vim.keymap.set({ "n", "v" }, "<leader>a", function()
         local input = vim.fn.input("Ask Copilot: ")
         if input ~= "" then
-          require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
+          chat.ask(input, {
+            selection = function()
+              return nil
+            end,
+          })
         end
-      end, { desc = "Copilot: [A]sk..." })
+      end, { desc = "[A]sk Copilot..." })
 
       vim.keymap.set({ "n", "v" }, "<leader>cp", function()
         local actions = require("CopilotChat.actions")
         require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
-      end, { desc = "Copilot: [P]rompt actions" })
+      end, { desc = "CopilotChat: [P]rompt" })
     end,
   },
 }
