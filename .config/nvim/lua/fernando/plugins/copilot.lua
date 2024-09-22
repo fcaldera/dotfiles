@@ -42,7 +42,7 @@ return {
         answer_header = "  GitHub Copilot",
         question_header = " Fernando",
         error_header = "  Error",
-        separator = ":",
+        separator = " ",
         show_help = false,
         auto_insert_mode = false,
         clear_chat_on_new_prompt = false,
@@ -59,10 +59,10 @@ return {
         prompts = {
           BetterNamings = "/COPILOT_GENERATE Provide better names for the following variables and functions.",
           -- Text related prompts
-          -- Summarize = "/COPILOT_GENERATE Summarize the following text.",
-          -- Spelling = "/COPILOT_GENERATE Correct any grammar and spelling errors in the following text.",
-          -- Wording = "/COPILOT_GENERATE Improve the grammar and wording of the following text.",
-          -- Concise = "/COPILOT_GENERATE Rewrite the following text to make it more concise.",
+          Summarize = "/COPILOT_GENERATE Summarize the following text.",
+          Spelling = "/COPILOT_GENERATE Correct any grammar and spelling errors in the following text.",
+          Wording = "/COPILOT_GENERATE Improve the grammar and wording of the following text.",
+          Concise = "/COPILOT_GENERATE Rewrite the following text to make it more concise.",
         },
         window = {
           width = 80,
