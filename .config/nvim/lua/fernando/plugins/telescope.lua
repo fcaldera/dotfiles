@@ -19,6 +19,18 @@ return {
       extensions = {
         fzf = {},
         wrap_results = true,
+        ["ui-select"] = {
+          require("telescope.themes").get_dropdown(),
+        },
+      },
+      pickers = {
+        buffers = {
+          mappings = {
+            n = {
+              ["d"] = "delete_buffer",
+            },
+          },
+        },
       },
     })
 
