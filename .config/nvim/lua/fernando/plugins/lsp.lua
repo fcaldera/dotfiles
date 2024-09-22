@@ -122,7 +122,7 @@ return {
       },
 
       volar = {
-        filetypes = { "vue", "javascript", "typescript" },
+        filetypes = { "vue" },
       },
 
       jsonls = {
@@ -192,16 +192,16 @@ return {
     require("conform").setup({
       formatters_by_ft = {
         lua = { "stylua" },
-        javascript = { "prettierd" },
-        typescript = { "prettierd" },
-        javascriptreact = { "prettierd" },
-        typescriptreact = { "prettierd" },
-        css = { "prettierd" },
-        html = { "prettierd" },
-        json = { "prettierd" },
-        yaml = { "prettierd" },
-        markdown = { "prettierd" },
-        vue = { "prettierd" },
+        javascript = { "prettierd", "prettier" },
+        typescript = { "prettierd", "prettier" },
+        javascriptreact = { "prettierd", "prettier" },
+        typescriptreact = { "prettierd", "prettier" },
+        css = { "prettierd", "prettier" },
+        html = { "prettierd", "prettier" },
+        json = { "prettierd", "prettier" },
+        yaml = { "prettierd", "prettier" },
+        markdown = { "prettierd", "prettier" },
+        vue = { "prettierd", "prettier" },
       },
     })
 
