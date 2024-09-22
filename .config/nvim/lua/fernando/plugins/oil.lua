@@ -9,6 +9,7 @@ return {
         ["<C-h>"] = false, -- actions.select_split
         ["<C-l>"] = false, -- actions.refresh
         ["gq"] = "actions.close",
+        ["gr"] = "actions.refresh",
       },
       view_options = {
         show_hidden = true,
