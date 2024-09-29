@@ -27,9 +27,10 @@ set("n", "N", "Nzzzv")
 set("v", "J", ":m '>+1<CR>gv=gv") -- Move selected lines down
 set("v", "K", ":m '<-2<CR>gv=gv") -- Move selected lines up
 
--- Increase/decrease numbers
-set({ "n", "v" }, "<M-=>", "<C-a>") -- Increase numbers
-set({ "n", "v" }, "<M-->", "<C-x>") -- Decrease numbers
+-- Increase numbers
+-- default <C-a> conflicts with Tmux prefix
+set({ "n", "v" }, "+", "<C-a>")
+set("x", "g+", "g<C-a>") -- V-Block multiline increment. :help v_g_CTRL-A
 
 -- Alternative delete/replace: avoid registers
 set({ "n", "v" }, "<M-d>", '"_d') -- Delete to the void register
