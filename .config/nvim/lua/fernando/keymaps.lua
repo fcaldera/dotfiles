@@ -53,6 +53,7 @@ end, { desc = "[T]oggle [C]ompletions" })
 
 -- Git keymaps
 set("n", "<leader>gs", vim.cmd.Git, { desc = "Git [S]tatus" })
+set("n", "<leader>gp", "<cmd>G push --force-with-lease<CR>", { desc = "Git [Push]" })
 -- set("n", "<leader>gd", vim.cmd.DiffviewOpen, { desc = "Git [D]iff" })
 -- set("n", "<leader>gh", vim.cmd.DiffviewFileHistory, { desc = "Git [H]istory" })
 
