@@ -10,10 +10,10 @@ return {
     vim.keymap.set("n", "<leader>ka", function() harpoon:list():add() end, { desc = "Harpoon: [A]dd" })
     vim.keymap.set("n", "<leader>ke", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc= "Harpoon: [E]xplore" })
 
-    vim.keymap.set("n", "<leader>ks", function() harpoon:list():select(2) end, { desc = "Harpoon: Select (1)" })
-    vim.keymap.set("n", "<leader>kd", function() harpoon:list():select(5) end, { desc = "Harpoon: Select (2)" })
-    vim.keymap.set("n", "<leader>kf", function() harpoon:list():select(5) end, { desc = "Harpoon: Select (3)" })
-    vim.keymap.set("n", "<leader>kg", function() harpoon:list():select(6) end, { desc = "Harpoon: Select (4)" })
+    vim.keymap.set("n", "<leader>ks", function() harpoon:list():select(1) end, { desc = "Harpoon: Select (1)" })
+    vim.keymap.set("n", "<leader>kd", function() harpoon:list():select(2) end, { desc = "Harpoon: Select (2)" })
+    vim.keymap.set("n", "<leader>kf", function() harpoon:list():select(3) end, { desc = "Harpoon: Select (3)" })
+    vim.keymap.set("n", "<leader>kg", function() harpoon:list():select(4) end, { desc = "Harpoon: Select (4)" })
 
     -- Toggle previous & next buffers stored within Harpoon list
     vim.keymap.set("n", "<C-p>", function() harpoon:list():prev() end, { desc = "Harpoon: [P]revious" })
