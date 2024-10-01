@@ -69,12 +69,12 @@ set("n", "<leader>kw", "<cmd>w<CR>", { desc = "[W]rite to disk" })
 set("n", "<leader>ku", vim.cmd.UndotreeToggle, { desc = "[U]ndo tree" })
 
 -- Quickfix navigation
-set("n", "<leader>qo", ":copen<CR>") -- open quickfix list
-set("n", "<leader>qf", ":cfirst<CR>zz") -- jump to first quickfix list item
-set("n", "<leader>qn", ":cnext<CR>zz") -- jump to next quickfix list item
-set("n", "<leader>qp", ":cprev<CR>zz") -- jump to prev quickfix list item
-set("n", "<leader>ql", ":clast<CR>zz") -- jump to last quickfix list item
-set("n", "<leader>qc", ":cclose<CR>") -- close quickfix list
+set("n", "[q", ":cprev<CR>zz", { desc = "Jump to previous quickfix item" })
+set("n", "]q", ":cnext<CR>zz", { desc = "Jump to next quickfix item" })
+set("n", "[Q", ":cfirst<CR>zz", { desc = "Jump to first quickfix item" })
+set("n", "]Q", ":clast<CR>zz", { desc = "Jump to last quickfix item" })
+set("n", "<leader>qo", ":copen<CR>", { desc = "Open quickfix list" })
+set("n", "<leader>qq", ":cclose<CR>", { desc = "Close quickfix list" })
 set("n", "<leader>qd", vim.diagnostic.setloclist, { desc = "Diagnostics" })
 
 -- [[ Basic Autocommands ]]
