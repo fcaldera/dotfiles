@@ -89,6 +89,7 @@ return {
         },
         highlight_groups = {
           CursorLineNr = { fg = "gold" },
+          Identifier = { fg = "foam" },
         },
       })
 

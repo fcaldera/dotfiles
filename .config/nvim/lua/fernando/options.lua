@@ -52,7 +52,7 @@ opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 opt.inccommand = "split"
 
 -- Show which line your cursor is on
-opt.cursorline = false
+opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 opt.scrolloff = 0
