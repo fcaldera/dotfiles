@@ -89,7 +89,9 @@ return {
         },
         highlight_groups = {
           CursorLineNr = { fg = "gold" },
-          Identifier = { fg = "foam" },
+          Identifier = { fg = "pine" },
+          ["@module.elixir"] = { fg = "foam" },
+          ["@string.special.symbol.elixir"] = { fg = "iris" },
         },
       })
 
