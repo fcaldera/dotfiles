@@ -18,6 +18,7 @@ return {
         "vim",
         "vimdoc",
         "elixir",
+        "heex",
       },
       auto_install = true,
       highlight = {

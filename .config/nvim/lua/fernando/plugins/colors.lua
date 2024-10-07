@@ -81,6 +81,15 @@ return {
     config = function()
       require("rose-pine").setup({
         variant = "moon", -- auto, main, moon, or dawn
+        extend_background_behind_borders = true,
+        styles = {
+          bold = true,
+          italic = false,
+          transparency = false,
+        },
+        highlight_groups = {
+          CursorLineNr = { fg = "gold" },
+        },
       })
 
       vim.cmd.colorscheme("rose-pine")
