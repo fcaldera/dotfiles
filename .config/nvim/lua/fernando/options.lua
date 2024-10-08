@@ -84,7 +84,4 @@ opt.wrap = false
 -- Don't have `o` add a comment
 opt.formatoptions:remove("o")
 
--- Avante views can only be fully collapsed with the global statusline
-vim.opt.laststatus = 3
-
 -- vim: ts=2 sts=2 sw=2 et
