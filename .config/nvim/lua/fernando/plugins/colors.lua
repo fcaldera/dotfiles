@@ -80,7 +80,7 @@ return {
     lazy = false,
     config = function()
       require("rose-pine").setup({
-        variant = "moon", -- auto, main, moon, or dawn
+        variant = "main", -- auto, main, moon, or dawn
         extend_background_behind_borders = true,
         styles = {
           bold = true,
