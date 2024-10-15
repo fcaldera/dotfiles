@@ -90,7 +90,7 @@ return {
         highlight_groups = {
           CursorLine = { bg = "none" },
           CursorLineNr = { fg = "gold" },
-          Identifier = { fg = "pine" },
+          -- Identifier = { fg = "pine" },
           ["@module.elixir"] = { fg = "foam" },
           ["@string.special.symbol.elixir"] = { fg = "iris" },
         },

@@ -13,6 +13,7 @@ return {
       support_paste_from_clipboard = false,
     },
     windows = {
+      width = 40,
       sidebar_header = {
         align = "left", -- left, center, right for title
         rounded = false,
