@@ -68,9 +68,11 @@ set("n", "<leader>vr", "<cmd>!gh repo view -w<CR><ESC>", { desc = "[V]iew [R]epo
 set("n", "<leader>vp", "<cmd>!gh pr view -w<CR>", { desc = "[V]iew [P]ull request", silent = true })
 
 -- Komands keymaps
-set("n", "<leader>kr", "<cmd>edit! %<CR>", { desc = "[R]eload file" })
+set("n", "<leader>kq", "<cmd>wqa!<CR>", { desc = "[Q]uit" })
 set("n", "<leader>kw", "<cmd>w<CR>", { desc = "[W]rite to disk" })
+set("n", "<leader>kr", "<cmd>edit! %<CR>", { desc = "[R]eload file" })
 set("n", "<leader>ku", vim.cmd.UndotreeToggle, { desc = "[U]ndo tree" })
+set("n", "<leader>ki", vim.cmd.DBUIToggle, { desc = "DBU[I]" })
 
 -- Quickfix navigation
 set("n", "[q", ":cprev<CR>zz", { desc = "Jump to previous quickfix item" })
