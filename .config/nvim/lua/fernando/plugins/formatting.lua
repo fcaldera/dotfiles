@@ -1,5 +1,3 @@
-local prettier = { "prettierd", "prettier", stop_after_first = true }
-
 return {
   "stevearc/conform.nvim",
   event = { "BufWritePre" },
@@ -28,7 +26,7 @@ return {
         lsp_format_opt = "fallback"
       end
       return {
-        timeout_ms = 500,
+        timeout_ms = 1500,
         lsp_format = lsp_format_opt,
       }
     end,
@@ -39,16 +37,22 @@ return {
       --
       -- You can use 'stop_after_first' to run the first available formatter from the list
       -- javascript = { "prettierd", "prettier", stop_after_first = true },
-      javascript = prettier,
-      typescript = prettier,
-      javascriptreact = prettier,
-      typescriptreact = prettier,
-      css = prettier,
-      html = prettier,
-      json = prettier,
-      yaml = prettier,
-      markdown = prettier,
-      vue = prettier,
+      javascript = { "prettierd" },
+      typescript = { "prettierd" },
+      javascriptreact = { "prettierd" },
+      typescriptreact = { "prettierd" },
+      css = { "prettierd" },
+      html = { "prettierd" },
+      json = { "prettierd" },
+      yaml = { "prettierd" },
+      markdown = { "prettierd" },
+      vue = { "prettierd" },
+      sql = { "sqlfluff" },
+    },
+    formatters = {
+      sqlfluff = {
+        args = { "format", "--dialect=ansi", "-" },
+      },
     },
   },
 }
