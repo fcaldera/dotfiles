@@ -47,12 +47,6 @@ return {
       yaml = { "prettierd" },
       markdown = { "prettierd" },
       vue = { "prettierd" },
-      sql = { "sqlfluff" },
-    },
-    formatters = {
-      sqlfluff = {
-        args = { "format", "--dialect=ansi", "-" },
-      },
     },
   },
 }
