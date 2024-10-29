@@ -1,8 +1,4 @@
 # Plugins
-if type -q fzf
-  fzf --fish | source
-end
-
 if test -f  ~/.asdf/asdf.fish
   source ~/.asdf/asdf.fish
 end
@@ -26,3 +22,10 @@ abbr -a kgp 'kubectl get pods'
 
 # Glia Specifics
 abbr -a ds 'devspace'
+
+# pnpm
+set -gx PNPM_HOME "/Users/fernando/Library/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
