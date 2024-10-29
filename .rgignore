@@ -7,3 +7,5 @@
 !.prettierrc*
 !.rgignore
 !.tmux.conf
+!.formatter.exs
+!.tool-versions
