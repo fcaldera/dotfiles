@@ -3,7 +3,7 @@
 # install.sh
 # symlink my dotfiles to appropriate places
 
-DIR=$HOME/dotfiles
+DIR=$HOME/projects/dotfiles
 
 DOTFILES=(
 	# ".bin"
@@ -20,9 +20,10 @@ DOTFILES=(
 	# ".config/mpv"
 	".config/nvim"
 	".config/fish/config.fish"
-	".config/fish/functions/keyremap.fish"
+	# ".config/fish/functions/keyremap.fish"
 	".rgignore"
 	# ".local/share/fonts"
+	".tool-versions"
 )
 
 for dotfile in "${DOTFILES[@]}";do
