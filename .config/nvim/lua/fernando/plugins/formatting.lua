@@ -47,6 +47,7 @@ return {
       yaml = { "prettierd" },
       markdown = { "prettierd" },
       vue = { "prettierd" },
+      sh = { "shfmt" },
     },
   },
 }

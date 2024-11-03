@@ -108,6 +108,10 @@ return {
       capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
       local servers = {
+        bashls = {},
+        cssls = {},
+        html = {},
+
         lua_ls = {
           settings = {
             Lua = {
@@ -121,8 +125,6 @@ return {
             },
           },
         },
-        cssls = {},
-        html = {},
 
         -- Probably want to disable formatting for this lang server
         ts_ls = {
@@ -178,6 +180,7 @@ return {
         "stylua",
         "prettierd",
         "eslint_d",
+        "shfmt",
       })
 
       require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
