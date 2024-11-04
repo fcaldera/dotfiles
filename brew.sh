@@ -19,7 +19,7 @@ fisher install jethrokuan/z
 fisher install edc/bass
 fisher install nickeb96/expanddots
 
-# brew install elixir
+brew install elixir
 # brew install erlang
 # brew install exercism
 brew install fzf
@@ -33,6 +33,9 @@ brew install trash
 brew install tree
 brew install entr
 brew install asdf
+
+# Elixir/Erlang Dependencies
+brew install autoconf openssl wxwidgets
 
 # Fonts
 brew install font-input
