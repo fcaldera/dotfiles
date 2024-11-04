@@ -47,3 +47,6 @@ brew install google-chrome
 # brew install firefox
 # brew install visual-studio-code
 # brew install zoom
+
+# TMUX
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
