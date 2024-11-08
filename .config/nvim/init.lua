@@ -36,6 +36,9 @@ require("lazy").setup({ { import = "fernando.plugins" } }, {
   change_detection = {
     notify = false,
   },
+  ui = {
+    border = "rounded",
+  },
 })
 
 require("fernando.keymaps")

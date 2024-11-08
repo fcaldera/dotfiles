@@ -173,7 +173,12 @@ return {
       }
 
       -- Servers installation
-      require("mason").setup()
+      require("mason").setup({
+        ui = {
+          border = "rounded",
+        },
+      })
+
       local ensure_installed = vim.tbl_keys(servers or {})
 
       vim.list_extend(ensure_installed, {
