@@ -9,3 +9,4 @@
 !.tmux.conf
 !.formatter.exs
 !.tool-versions
+!.wezterm.lua

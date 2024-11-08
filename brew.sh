@@ -39,17 +39,19 @@ brew install autoconf openssl wxwidgets
 
 # Fonts
 brew install font-input
+brew install font-hasklig
+brew install font-fira-code
 brew install font-monaspace
-brew install font-hasklug-nerd-font
-brew install font-jetbrains-mono-nerd-font
+brew install font-jetbrains-mono
 
 # Apps
-brew install iterm2
-brew install spotify
-brew install google-chrome
-# brew install firefox
-# brew install visual-studio-code
-# brew install zoom
+brew install --cask wezterm
+brew install --cask spotify
+brew install --cask google-chrome
+# brew install iterm2
+# brew install --cask firefox
+# brew install --cask visual-studio-code
+# brew install --cask zoom
 
 # TMUX
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
