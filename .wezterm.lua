@@ -10,30 +10,34 @@ config.color_scheme = "rose-pine"
 
 local scheme = wezterm.color.get_builtin_schemes()[config.color_scheme]
 
--- config.window_background_gradient = {
--- 	colors = {
--- 		scheme.background,
--- 		scheme.background,
--- 		scheme.ansi[1],
--- 	},
--- }
-
-config.window_background_gradient = {
-	colors = {
-		scheme.background,
-		scheme.background,
-		scheme.ansi[1],
-		scheme.background,
+local gradients = {
+	ltr = {
+		colors = {
+			scheme.background,
+			scheme.background,
+			scheme.ansi[1],
+		},
 	},
-	orientation = { Linear = { angle = 45.0 } },
+
+	diagonal = {
+		colors = {
+			scheme.background,
+			scheme.background,
+			scheme.ansi[1],
+			scheme.background,
+		},
+		orientation = { Linear = { angle = 45.0 } },
+	},
+
+	radial = {
+		colors = {
+			scheme.ansi[1],
+			scheme.background,
+		},
+		orientation = { Radial = { cx = 1.0, cy = 0.0, radius = 0.75 } },
+	},
 }
 
--- config.window_background_gradient = {
--- 	colors = {
--- 		scheme.ansi[1],
--- 		scheme.background,
--- 	},
--- 	orientation = { Radial = { cx = 1, cy = 0, radius = 0.75 } },
--- }
+config.window_background_gradient = gradients["diagonal"]
 
 return config
