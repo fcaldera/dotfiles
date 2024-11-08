@@ -84,8 +84,8 @@ return {
         extend_background_behind_borders = true,
         styles = {
           bold = true,
-          italic = false,
-          transparency = false,
+          italic = true,
+          transparency = true,
         },
         highlight_groups = {
           CursorLine = { bg = "none" },
