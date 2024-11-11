@@ -48,6 +48,7 @@ brew install font-jetbrains-mono
 brew install --cask wezterm
 brew install --cask spotify
 brew install --cask google-chrome
+brew install --cask raycast
 # brew install iterm2
 # brew install --cask firefox
 # brew install --cask visual-studio-code
