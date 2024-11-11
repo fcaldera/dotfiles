@@ -24,6 +24,7 @@ DOTFILES=(
 	".rgignore"
 	# ".local/share/fonts"
 	".tool-versions"
+	".wezterm.lua"
 )
 
 for dotfile in "${DOTFILES[@]}";do
