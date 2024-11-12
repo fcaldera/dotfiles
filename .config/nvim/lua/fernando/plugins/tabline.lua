@@ -14,15 +14,17 @@ return {
       line = function(line)
         return {
           {
-            { "   ", hl = theme.head },
-            line.sep(" ", theme.fill, theme.fill),
-            -- line.sep("", theme.head, theme.fill),
+            { "  ", hl = theme.head },
+            line.sep("", theme.head, theme.fill),
           },
           line.tabs().foreach(function(tab)
             local hl = tab.is_current() and theme.current_tab or theme.tab
-
             return {
-              string.format("  %s  ", tab.name()),
+              line.sep("  ", hl, hl),
+              tab.is_current() and ":: " or "",
+              tab.name(),
+              tab.is_current() and " ::" or "",
+              line.sep("  ", hl, hl),
               hl = hl,
             }
           end),

@@ -96,7 +96,7 @@ return {
           -- Comment = { italic = true },
           TabLine = { bg = "overlay" },
           TabLineFill = { bg = "overlay" },
-          TablineHead = { bg = "rose", fg = "highlight_med" },
+          TablineHead = { bg = "foam", fg = "highlight_med" },
         },
       })
 
