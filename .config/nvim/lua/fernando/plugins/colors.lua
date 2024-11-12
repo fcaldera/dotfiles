@@ -94,6 +94,9 @@ return {
           ["@module.elixir"] = { fg = "foam" },
           ["@string.special.symbol.elixir"] = { fg = "iris" },
           -- Comment = { italic = true },
+          TabLine = { bg = "overlay" },
+          TabLineFill = { bg = "overlay" },
+          TablineHead = { bg = "rose", fg = "highlight_med" },
         },
       })
 
