@@ -93,6 +93,7 @@ return {
           -- Identifier = { fg = "pine" },
           ["@module.elixir"] = { fg = "foam" },
           ["@string.special.symbol.elixir"] = { fg = "iris" },
+          -- Comment = { italic = true },
         },
       })
 
