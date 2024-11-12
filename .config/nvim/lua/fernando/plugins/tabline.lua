@@ -9,6 +9,7 @@ return {
       tab = "TabLine",
       win = "TabLine",
       tail = "TabLine",
+      mark = "TablineSelMark",
     }
     require("tabby").setup({
       line = function(line)
@@ -21,9 +22,9 @@ return {
             local hl = tab.is_current() and theme.current_tab or theme.tab
             return {
               line.sep("  ", hl, hl),
-              tab.is_current() and ":: " or "",
+              { tab.is_current() and ":: " or "", hl = theme.mark },
               tab.name(),
-              tab.is_current() and " ::" or "",
+              { tab.is_current() and " ::" or "", hl = theme.mark },
               line.sep("  ", hl, hl),
               hl = hl,
             }

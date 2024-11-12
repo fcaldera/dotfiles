@@ -97,6 +97,7 @@ return {
           TabLine = { bg = "overlay" },
           TabLineFill = { bg = "overlay" },
           TablineHead = { bg = "foam", fg = "highlight_med" },
+          TablineSelMark = { fg = "subtle" },
         },
       })
 
