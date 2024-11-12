@@ -18,7 +18,7 @@ return {
         -- Identifier = { fg = "pine" },
         ["@module.elixir"] = { fg = "foam" },
         ["@string.special.symbol.elixir"] = { fg = "iris" },
-        -- Comment = { italic = true },
+        Comment = { italic = true },
         TabLine = { bg = "overlay" },
         TabLineFill = { bg = "overlay" },
         TablineHead = { bg = "foam", fg = "highlight_med" },

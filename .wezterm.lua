@@ -7,6 +7,12 @@ config.window_decorations = "RESIZE"
 config.window_background_opacity = 0.95
 
 config.font = wezterm.font("Monaspace Krypton")
+config.font_size = 14
+config.line_height = 1.1
+config.font_rules = { {
+	italic = true,
+	font = wezterm.font("Monaspace Radon"),
+} }
 config.harfbuzz_features = {
 	"calt",
 	"ss01",
@@ -26,8 +32,6 @@ config.harfbuzz_features = {
 	"cv16", -- Q
 }
 
-config.font_size = 14
-config.line_height = 1.1
 config.color_scheme = "rose-pine"
 
 return config
