@@ -6,7 +6,7 @@ config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
 config.window_background_opacity = 0.95
 
--- config.font = wezterm.font("Monaspace Krypton")
+config.font = wezterm.font("Monaspace Krypton")
 config.harfbuzz_features = {
 	"calt",
 	"ss01",

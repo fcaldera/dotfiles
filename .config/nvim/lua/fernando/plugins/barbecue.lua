@@ -7,6 +7,8 @@ return {
     "nvim-tree/nvim-web-devicons", -- optional dependency
   },
   opts = {
-    -- configurations go here
+    theme = {
+      separator = vim.api.nvim_get_hl(0, { name = "NonText" }),
+    },
   },
 }

@@ -22,7 +22,7 @@ return {
             local hl = tab.is_current() and theme.current_tab or theme.tab
 
             return {
-              string.format(" %s ", tab.name()),
+              string.format("  %s  ", tab.name()),
               hl = hl,
             }
           end),
