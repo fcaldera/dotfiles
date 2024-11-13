@@ -15,7 +15,7 @@ if handle then
 end
 
 -- For my personal MacBook
-if string.find(".local", hostname) then
+if string.find(hostname, ".local") then
 	config.font = wezterm.font("Monaspace Krypton")
 	config.font_rules = { {
 		italic = true,
