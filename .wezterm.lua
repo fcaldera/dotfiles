@@ -6,13 +6,25 @@ config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
 config.window_background_opacity = 0.95
 
-config.font = wezterm.font("Monaspace Krypton")
+-- Get the hostname to conditionally apply configs
+local hostname = ""
+local handle = io.popen("hostname")
+if handle then
+	hostname = handle:read("*a"):gsub("%s+", "")
+	handle:close()
+end
+
+-- For my personal MacBook
+if string.find(".local", hostname) then
+	config.font = wezterm.font("Monaspace Krypton")
+	config.font_rules = { {
+		italic = true,
+		font = wezterm.font("Monaspace Radon"),
+	} }
+end
+
 config.font_size = 14
 config.line_height = 1.1
-config.font_rules = { {
-	italic = true,
-	font = wezterm.font("Monaspace Radon"),
-} }
 config.harfbuzz_features = {
 	"calt",
 	"ss01",
