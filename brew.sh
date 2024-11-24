@@ -33,6 +33,10 @@ brew install trash
 brew install tree
 brew install entr
 brew install asdf
+brew install lazygit
+
+brew install julien-cpsn/atac/atac
+brew install FelixKratz/formulae/borders
 
 # Elixir/Erlang Dependencies
 brew install autoconf openssl wxwidgets
@@ -53,6 +57,7 @@ brew install --cask raycast
 # brew install --cask firefox
 # brew install --cask visual-studio-code
 # brew install --cask zoom
+brew install --cask nikitabobko/tap/aerospace
 
 # TMUX
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

@@ -20,6 +20,7 @@ return {
         "elixir",
         "heex",
         "sql",
+        "git_rebase",
       },
       auto_install = true,
       highlight = {

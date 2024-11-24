@@ -25,9 +25,10 @@ DOTFILES=(
 	# ".local/share/fonts"
 	".tool-versions"
 	".wezterm.lua"
+	".config/aerospace"
 )
 
-for dotfile in "${DOTFILES[@]}";do
+for dotfile in "${DOTFILES[@]}"; do
 	rm -rf "${HOME}/${dotfile}"
 	ln -sf "${DIR}/${dotfile}" "${HOME}/${dotfile}"
 done
