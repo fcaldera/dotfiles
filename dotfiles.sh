@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
-# install.sh
+# dotfiles.sh
 # symlink my dotfiles to appropriate places
-
-DIR=$HOME/projects/dotfiles
 
 DOTFILES=(
 	# ".bin"
@@ -30,5 +28,5 @@ DOTFILES=(
 
 for dotfile in "${DOTFILES[@]}"; do
 	rm -rf "${HOME}/${dotfile}"
-	ln -sf "${DIR}/${dotfile}" "${HOME}/${dotfile}"
+	ln -sf "${PWD}/${dotfile}" "${HOME}/${dotfile}"
 done
