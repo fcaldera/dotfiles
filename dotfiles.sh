@@ -4,26 +4,16 @@
 # symlink my dotfiles to appropriate places
 
 DOTFILES=(
-	# ".bin"
-	# ".bashrc"
-	# ".bash_profile"
 	".gitconfig"
-	# ".profile"
+	".rgignore"
+	".tool-versions"
 	".tmux.conf"
-	# ".xinitrc"
-	# ".config/cmus/cmus.theme"
-	# ".config/compton.conf"
-	# ".config/dunst"
-	# ".config/feh"
-	# ".config/mpv"
+	".wezterm.lua"
 	".config/nvim"
+	".config/atac"
+	".config/aerospace"
 	".config/fish/config.fish"
 	".config/fish/functions/keyremap.fish"
-	".rgignore"
-	# ".local/share/fonts"
-	".tool-versions"
-	".wezterm.lua"
-	".config/aerospace"
 )
 
 for dotfile in "${DOTFILES[@]}"; do

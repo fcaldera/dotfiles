@@ -35,3 +35,5 @@ if test -e ~/Library/pnpm
 	end
 end
 # pnpm end
+
+set -x ATAC_KEY_BINDINGS ~/.config/atac/key_bindings.toml
