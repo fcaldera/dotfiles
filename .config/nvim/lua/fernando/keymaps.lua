@@ -73,6 +73,7 @@ set("n", "<leader>kw", "<cmd>w<CR>", { desc = "[W]rite to disk" })
 set("n", "<leader>kr", "<cmd>edit! %<CR>", { desc = "[R]eload file" })
 set("n", "<leader>ku", vim.cmd.UndotreeToggle, { desc = "[U]ndo tree" })
 set("n", "<leader>ki", vim.cmd.DBUIToggle, { desc = "DBU[I]" })
+set("n", "<leader>kx", "<cmd>source %<CR>", { desc = "Source file" })
 
 -- Quickfix navigation
 set("n", "[q", ":cprev<CR>zz", { desc = "Jump to previous quickfix item" })
