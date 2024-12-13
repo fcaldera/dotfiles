@@ -11,3 +11,4 @@
 !.tool-versions
 !.wezterm.lua
 !.env*
+!.github
