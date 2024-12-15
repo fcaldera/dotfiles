@@ -1,3 +1,5 @@
+;; extends
+
 (call
   target: (dot
             left: (alias) @repo (#eq? @repo "Repo") 
