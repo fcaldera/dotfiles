@@ -133,12 +133,12 @@ alt-s = 'workspace S'
 alt-d = 'workspace D'
 alt-f = 'workspace F'
 
-alt-c = 'exec-and-forget open -a /Applications/Google\ Chrome.app'
-alt-m = 'exec-and-forget open -a /Applications/Spotify.app'
-alt-w = 'exec-and-forget open -a /Applications/WezTerm.app'
+# alt-c = 'exec-and-forget open -a /Applications/Google\ Chrome.app'
+# alt-m = 'exec-and-forget open -a /Applications/Spotify.app'
+# alt-w = 'exec-and-forget open -a /Applications/WezTerm.app'
 
-alt-shift-c = 'exec-and-forget open -n /Applications/Google\ Chrome.app'
-alt-shift-w = 'exec-and-forget open -n /Applications/WezTerm.app'
+# alt-shift-c = 'exec-and-forget open -n /Applications/Google\ Chrome.app'
+# alt-shift-w = 'exec-and-forget open -n /Applications/WezTerm.app'
 
 cmd-h = [] # Disable "hide application"
 cmd-alt-h = [] # Disable "hide others"
@@ -188,3 +188,6 @@ alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 
+[[on-window-detected]]
+if.app-id = 'com.apple.Passwords'
+run = 'layout floating'
