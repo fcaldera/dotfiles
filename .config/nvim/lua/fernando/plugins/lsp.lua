@@ -109,7 +109,16 @@ return {
 
       local servers = {
         bashls = {},
-        cssls = {},
+        cssls = {
+          settings = {
+            css = {
+              lint = {
+                -- Avoid showing @apply and @theme tailwindcss directives as warnings
+                unknownAtRules = "ignore",
+              },
+            },
+          },
+        },
         html = {},
 
         lua_ls = {
@@ -170,6 +179,8 @@ return {
 
         -- XML Language server { "xml", "xsd", "xsl", "xslt", "svg" }
         lemminx = {},
+
+        tailwindcss = {},
       }
 
       -- Servers installation
