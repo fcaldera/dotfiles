@@ -36,4 +36,10 @@ if test -e ~/Library/pnpm
 end
 # pnpm end
 
+# salemove specifics
+if test -e ~/salemove/sm-configuration/bin
+  set -e PATH[(contains -i ~/salemove/sm-configuration/bin $PATH)]
+  set -gx PATH ~/salemove/sm-configuration/bin $PATH
+end
+
 set -x ATAC_KEY_BINDINGS ~/.config/atac/key_bindings.toml
