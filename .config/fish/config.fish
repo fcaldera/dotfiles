@@ -21,11 +21,11 @@ abbr -a lh ls -A | egrep '^\.'
 #abbr -a tac 'tmux a -t config'
 
 # k8s 
-#abbr -a k 'kubectl'
+abbr -a kube 'kubectl'
 #abbr -a kgp 'kubectl get pods'
 
 # Glia Specifics
-#abbr -a ds 'devspace'
+abbr -a dev 'devspace'
 
 # pnpm
 if test -e ~/Library/pnpm 
