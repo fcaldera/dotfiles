@@ -96,4 +96,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
+-- Disable anyoing legacy navigation
+vim.keymap.set("n", "Q", "<nop>")
+
 -- vim: ts=2 sts=2 sw=2 et
