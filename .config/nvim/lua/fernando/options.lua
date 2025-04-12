@@ -65,6 +65,7 @@ opt.termguicolors = true
 opt.background = "dark"
 vim.diagnostic.config({
   float = { border = "rounded" }, -- add border to diagnostic popups
+  virtual_lines = { current_line = true },
 })
 
 -- Tabs & Indentation
