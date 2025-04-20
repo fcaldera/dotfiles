@@ -53,8 +53,18 @@ set("n", "<leader>tc", function()
 end, { desc = "[T]oggle [C]ompletions" })
 
 -- Git keymaps
-set("n", "<leader>gs", vim.cmd.Git, { desc = "Git [S]tatus" })
-set("n", "<leader>gp", "<cmd>Git push<CR>", { desc = "Git [P]ush" })
+set("n", "<leader>gs", function()
+  local winids = vim.api.nvim_list_wins()
+  for _, id in pairs(winids) do
+    local status = pcall(vim.api.nvim_win_get_var, id, "fugitive_status")
+    if status then
+      vim.api.nvim_win_close(id, false)
+      return
+    end
+  end
+  vim.cmd("Git")
+end, { desc = "Git [S]tatus" })
+set("n", "<leader>gp", "<cmd>Git push <CR>", { desc = "Git [P]ush" })
 set("n", "<leader>ga", "<cmd>Gwrite<CR>", { desc = "Git [A]dd" })
 set("n", "<leader>gr", "<cmd>Gread<CR>", { desc = "Git [R]eload" })
 set("n", "<leader>gl", "<cmd>Git log --oneline %<CR>", { desc = "Git [L]og" })
