@@ -82,8 +82,12 @@ return {
     -- Shows a signature help window while you type arguments for a function
     signature = { enabled = true, window = { border = "rounded" } },
   },
+  config = function(_, opts)
+    require("blink.cmp").setup(opts)
+
+    -- Load my custom snippets
+    for _, ft_path in ipairs(vim.api.nvim_get_runtime_file("lua/fernando/snippets/*.lua", true)) do
+      loadfile(ft_path)()
+    end
+  end,
 }
--- Load my custom snippets
--- for _, ft_path in ipairs(vim.api.nvim_get_runtime_file("lua/fernando/snippets/*.lua", true)) do
---   loadfile(ft_path)()
--- end
