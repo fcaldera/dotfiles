@@ -35,7 +35,6 @@ opt.signcolumn = "yes"
 opt.updatetime = 250
 
 -- Decrease mapped sequence wait time
--- Displays which-key popup sooner
 opt.timeoutlen = 300
 
 -- Configure how new splits should be opened
@@ -57,16 +56,17 @@ opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 opt.scrolloff = 0
 
+-- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
+-- instead raise a dialog asking if you wish to save the current file(s)
+-- See `:help 'confirm'`
+vim.opt.confirm = true
+
 -- [[ Additional Settings ]]
 -- Options below were added by me and not present in kickstart.nvim
 
 -- Appearance
 opt.termguicolors = true
 opt.background = "dark"
-vim.diagnostic.config({
-  float = { border = "rounded" }, -- add border to diagnostic popups
-  virtual_lines = { current_line = true },
-})
 
 -- Tabs & Indentation
 opt.tabstop = 2

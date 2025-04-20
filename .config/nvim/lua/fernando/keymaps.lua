@@ -54,7 +54,7 @@ end, { desc = "[T]oggle [C]ompletions" })
 
 -- Git keymaps
 set("n", "<leader>gs", vim.cmd.Git, { desc = "Git [S]tatus" })
-set("n", "<leader>gp", "<cmd>Git push --force-with-lease<CR>", { desc = "Git [P]ush" })
+set("n", "<leader>gp", "<cmd>Git push<CR>", { desc = "Git [P]ush" })
 set("n", "<leader>ga", "<cmd>Gwrite<CR>", { desc = "Git [A]dd" })
 set("n", "<leader>gr", "<cmd>Gread<CR>", { desc = "Git [R]eload" })
 set("n", "<leader>gl", "<cmd>Git log --oneline %<CR>", { desc = "Git [L]og" })
