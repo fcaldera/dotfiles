@@ -88,4 +88,7 @@ opt.formatoptions:remove("o")
 -- Always show tabline
 opt.showtabline = 2
 
+-- Floating windows border style
+-- opt.winborder = "rounded"
+
 -- vim: ts=2 sts=2 sw=2 et
