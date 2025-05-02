@@ -13,7 +13,7 @@ return {
         transparency = false,
       },
       highlight_groups = {
-        CursorLine = { bg = "none" },
+        -- CursorLine = { bg = "none" },
         CursorLineNr = { fg = "gold" },
         -- Identifier = { fg = "pine" },
         ["@module.elixir"] = { fg = "foam" },
