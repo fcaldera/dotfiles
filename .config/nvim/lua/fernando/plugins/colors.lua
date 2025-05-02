@@ -10,7 +10,7 @@ return {
       styles = {
         bold = true,
         italic = false,
-        transparency = true,
+        transparency = false,
       },
       highlight_groups = {
         CursorLine = { bg = "none" },
@@ -22,9 +22,9 @@ return {
         Comment = { italic = true },
         TabLine = { bg = "overlay" },
         TabLineFill = { bg = "overlay" },
-        TablineHead = { bg = "foam", fg = "highlight_med" },
-        TablineSel = { bg = "surface", fg = "text" },
-        TablineSelMark = { fg = "subtle" },
+        TabLineHead = { bg = "foam", fg = "highlight_med" },
+        TabLineSel = { bg = "surface", fg = "text" },
+        TabLineSelMark = { fg = "subtle" },
         NotificationInfo = { bg = "overlay", fg = "text" },
       },
     })

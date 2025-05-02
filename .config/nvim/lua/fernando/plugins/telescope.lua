@@ -81,11 +81,31 @@ return {
       })
     end, { desc = "[S]earch [P]ackages files" })
 
-    -- stylua: ignore
     local builtin_colors = {
-      "zellner", "torte", "slate", "shine", "ron", "quiet", "peachpuff",
-      "pablo", "murphy", "lunaperche", "koehler", "industry", "evening", "elflord",
-      "desert", "delek", "default", "darkblue", "blue", "morning", "randomhue"
+      "blue",
+      "darkblue",
+      "default",
+      "delek",
+      "desert",
+      "elflord",
+      "evening",
+      "industry",
+      "koehler",
+      "lunaperche",
+      "morning",
+      "murphy",
+      "pablo",
+      "peachpuff",
+      "quiet",
+      "randomhue",
+      "ron",
+      "shine",
+      "torte",
+      "unokai",
+      "vim",
+      "wildcharm",
+      "zaibatsu",
+      "zellner",
     }
 
     -- Shortcut for searching color schemes
