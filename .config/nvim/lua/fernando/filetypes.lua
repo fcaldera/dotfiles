@@ -6,4 +6,7 @@ vim.filetype.add({
     [".env"] = "sh",
     [".env.*"] = "sh",
   },
+  extension = {
+    hbs = "html",
+  },
 })

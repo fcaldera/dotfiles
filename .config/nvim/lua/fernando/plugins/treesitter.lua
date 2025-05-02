@@ -22,6 +22,7 @@ return {
         "sql",
         "git_rebase",
       },
+      ignore_install = { "glimmer" },
       auto_install = true,
       highlight = {
         enable = true,
