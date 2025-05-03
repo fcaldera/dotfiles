@@ -2,10 +2,10 @@ return {
   "nanozuki/tabby.nvim",
   dependencies = "nvim-tree/nvim-web-devicons",
   config = function()
-    local function get_hl(name, default)
+    local function get_hl(name, fallback)
       local hl = vim.api.nvim_get_hl(0, { name = name })
       local is_valid = next(hl) ~= nil
-      return is_valid and name or default
+      return is_valid and name or fallback
     end
 
     local function merge_hl(hl_name_1, hl_name_2)
@@ -36,7 +36,7 @@ return {
             local hl = tab.is_current() and theme.current_tab or theme.tab
             local pad = {
               tab.is_current() and "::" or " ",
-              hl = merge_hl(theme.mark, hl),
+              hl = merge_hl(hl, theme.mark),
             }
             return { pad, tab.name(), pad, hl = hl }
           end),
