@@ -84,7 +84,6 @@ return {
     local builtin_colors = {
       "blue",
       "darkblue",
-      "default",
       "delek",
       "desert",
       "elflord",
@@ -98,6 +97,7 @@ return {
       "peachpuff",
       "quiet",
       "randomhue",
+      "retrobox",
       "ron",
       "shine",
       "torte",
