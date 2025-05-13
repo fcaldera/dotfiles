@@ -22,9 +22,9 @@ return {
         Comment = { italic = true },
         -- TabLine = { bg = "overlay" },
         -- TabLineFill = { bg = "overlay" },
-        TabLineHead = { bg = "foam", fg = "highlight_med" },
-        TabLineSel = { bg = "base", fg = "text" },
-        TabLineSelMark = { fg = "muted" },
+        -- TabLineHead = { bg = "foam", fg = "highlight_med" },
+        -- TabLineSel = { bg = "base", fg = "text" },
+        -- TabLineSelMark = { fg = "muted" },
         NotificationInfo = { bg = "overlay", fg = "text" },
       },
     })
