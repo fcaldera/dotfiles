@@ -14,8 +14,6 @@ set("n", "<leader>x", "<C-w>c", { desc = "Close the current window" })
 -- Control the size of splits (height/width)
 set("n", "<M-,>", "<c-w>5<")
 set("n", "<M-.>", "<c-w>5>")
-set("n", "<M-t>", "<C-W>+")
-set("n", "<M-s>", "<C-W>-")
 
 -- Keep the cursor in the middle when jumping vertically
 set("n", "<C-d>", "<C-d>zz")
@@ -33,18 +31,12 @@ set({ "n", "v" }, "+", "<C-a>")
 set("x", "g+", "g<C-a>") -- V-Block multiline increment. :help v_g_CTRL-A
 
 -- Alternative delete/replace: avoid registers
-set({ "n", "v" }, "<M-d>", '"_d') -- Delete to the void register
-set("x", "<M-p>", [["_dP]]) -- Paste to void register
+set({ "n", "v" }, "<leader>ad", '"_d', { desc = "Delete to void" })
+set("x", "<leader>ap", [["_dP]], { desc = "Paste to void" }) -- Paste to void register
 
 -- Replace all of the word-under-cursor occurrences
 local cmd = [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]
 set("n", "<leader>rw", cmd, { desc = "[R]eplace [W]ord under cursor..." })
-
--- Buffer keymaps
-set("n", "<leader>bd", "<cmd>bd %<CR>", { desc = "[B]uffer [D]elete" })
-
--- Tab keymaps
-set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "[T]ab close" })
 
 -- Toggle keymaps
 set("n", "<leader>tc", function()
@@ -53,7 +45,16 @@ set("n", "<leader>tc", function()
 end, { desc = "[T]oggle [C]ompletions" })
 
 -- Git keymaps
-set("n", "<leader>gs", function()
+set("n", "<leader>gs", "<cmd>Git<CR>", { desc = "Git [S]tatus" })
+set("n", "<leader>gp", "<cmd>Git push<CR>", { desc = "Git [P]ush" })
+set("n", "<leader>ga", "<cmd>Gwrite<CR>", { desc = "Git [A]dd" })
+set("n", "<leader>gr", "<cmd>Gread<CR>", { desc = "Git [R]eload" })
+set("n", "<leader>gl", "<cmd>Git log --oneline %<CR>", { desc = "Git [L]og" })
+set("n", "<leader>gc", "<cmd>Git commit<CR>", { desc = "Git [C]ommit" })
+-- set("n", "<leader>gd", vim.cmd.DiffviewOpen, { desc = "Git [D]iff" })
+-- set("n", "<leader>gh", vim.cmd.DiffviewFileHistory, { desc = "Git [H]istory" })
+
+set("n", "<leader>gq", function()
   local winids = vim.api.nvim_list_wins()
   for _, id in pairs(winids) do
     local status = pcall(vim.api.nvim_win_get_var, id, "fugitive_status")
@@ -62,15 +63,7 @@ set("n", "<leader>gs", function()
       return
     end
   end
-  vim.cmd("Git")
-end, { desc = "Git [S]tatus" })
-set("n", "<leader>gp", "<cmd>Git push <CR>", { desc = "Git [P]ush" })
-set("n", "<leader>ga", "<cmd>Gwrite<CR>", { desc = "Git [A]dd" })
-set("n", "<leader>gr", "<cmd>Gread<CR>", { desc = "Git [R]eload" })
-set("n", "<leader>gl", "<cmd>Git log --oneline %<CR>", { desc = "Git [L]og" })
-set("n", "<leader>gc", "<cmd>Git commit<CR>", { desc = "Git [C]ommit" })
--- set("n", "<leader>gd", vim.cmd.DiffviewOpen, { desc = "Git [D]iff" })
--- set("n", "<leader>gh", vim.cmd.DiffviewFileHistory, { desc = "Git [H]istory" })
+end, { desc = "Git [Q]uit" })
 
 -- Browse/View
 set("n", "<leader>vf", vim.cmd.GBrowse, { desc = "[V]iew [F]ile" })
@@ -78,8 +71,8 @@ set("n", "<leader>vr", "<cmd>!gh repo view -w<CR><ESC>", { desc = "[V]iew [R]epo
 set("n", "<leader>vp", "<cmd>!gh pr view -w<CR>", { desc = "[V]iew [P]ull request", silent = true })
 
 -- Komands keymaps
-set("n", "<leader>kq", "<cmd>wqa!<CR>", { desc = "[Q]uit" })
-set("n", "<leader>kw", "<cmd>w<CR>", { desc = "[W]rite to disk" })
+set("n", "<leader>kq", "<cmd>noautocmd wqa!<CR>", { desc = "[Q]uit" })
+set("n", "<leader>kw", "<cmd>noautocmd w<CR>", { desc = "[W]rite to disk" })
 set("n", "<leader>kr", "<cmd>edit! %<CR>", { desc = "[R]eload file" })
 set("n", "<leader>ku", vim.cmd.UndotreeToggle, { desc = "[U]ndo tree" })
 set("n", "<leader>ki", vim.cmd.DBUIToggle, { desc = "DBU[I]" })
