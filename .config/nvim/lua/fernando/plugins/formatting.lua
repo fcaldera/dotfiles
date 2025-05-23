@@ -48,5 +48,14 @@ return {
       sh = { "shfmt" },
       handlebars = { "prettier" },
     },
+    formatters = {
+      prettier = {
+        options = {
+          ext_parsers = {
+            ejs = "html",
+          },
+        },
+      },
+    },
   },
 }
