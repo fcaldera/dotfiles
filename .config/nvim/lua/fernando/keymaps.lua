@@ -75,7 +75,7 @@ set("n", "<leader>kq", "<cmd>noautocmd wqa!<CR>", { desc = "[Q]uit" })
 set("n", "<leader>kw", "<cmd>noautocmd w<CR>", { desc = "[W]rite to disk" })
 set("n", "<leader>kr", "<cmd>edit! %<CR>", { desc = "[R]eload file" })
 set("n", "<leader>ku", vim.cmd.UndotreeToggle, { desc = "[U]ndo tree" })
-set("n", "<leader>ki", vim.cmd.DBUIToggle, { desc = "DBU[I]" })
+set("n", "<leader>kd", vim.cmd.DBUIToggle, { desc = "DBU[I]" })
 set("n", "<leader>kx", "<cmd>source %<CR>", { desc = "Source file" })
 set("n", "<leader>ks", "<cmd>mksession! session.vim<CR>", { desc = "[S]ave session" })
 
