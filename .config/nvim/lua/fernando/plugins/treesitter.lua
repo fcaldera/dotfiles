@@ -4,6 +4,17 @@ return {
   config = function()
     require("nvim-treesitter.install").prefer_git = true
 
+    local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+
+    parser_config.embedded_template = {
+      install_info = {
+        url = "https://github.com/tree-sitter/tree-sitter-embedded-template",
+        files = { "src/parser.c" },
+        requires_generate_from_grammar = true,
+      },
+      filetype = "ejs",
+    }
+
     require("nvim-treesitter.configs").setup({
       ensure_installed = {
         "bash",
@@ -21,6 +32,7 @@ return {
         "heex",
         "sql",
         "git_rebase",
+        "embedded_template",
       },
       ignore_install = { "glimmer" },
       auto_install = true,
@@ -33,6 +45,8 @@ return {
       },
       indent = { enable = true, disable = { "ruby" } },
     })
+
+    vim.treesitter.language.register("embedded_template", "ejs")
 
     -- Configure gotmpl parser
     -- local parser_config = require("nvim-treesitter.parsers").get_parser_configs()

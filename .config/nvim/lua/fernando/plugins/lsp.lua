@@ -175,7 +175,10 @@ return {
             },
           },
         },
-        html = {},
+
+        html = {
+          filetypes = { "html", "templ", "ejs" },
+        },
 
         lua_ls = {
           settings = {

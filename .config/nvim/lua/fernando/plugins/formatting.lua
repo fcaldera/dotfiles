@@ -47,6 +47,7 @@ return {
       vue = { "prettier" },
       sh = { "shfmt" },
       handlebars = { "prettier" },
+      ejs = { "prettier" },
     },
     formatters = {
       prettier = {
