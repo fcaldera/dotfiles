@@ -22,10 +22,11 @@ return {
         Comment = { italic = true },
         -- TabLine = { bg = "overlay" },
         -- TabLineFill = { bg = "overlay" },
-        -- TabLineHead = { bg = "foam", fg = "highlight_med" },
         -- TabLineSel = { bg = "base", fg = "text" },
+        -- TabLineHead = { bg = "foam", fg = "highlight_med" },
         -- TabLineSelMark = { fg = "muted" },
         NotificationInfo = { bg = "overlay", fg = "text" },
+        Visual = { bg = "foam", blend = 40 },
       },
     })
 
