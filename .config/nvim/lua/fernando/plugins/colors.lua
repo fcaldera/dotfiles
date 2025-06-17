@@ -26,7 +26,7 @@ return {
         -- TabLineHead = { bg = "foam", fg = "highlight_med" },
         -- TabLineSelMark = { fg = "muted" },
         NotificationInfo = { bg = "overlay", fg = "text" },
-        Visual = { bg = "foam", blend = 40 },
+        Visual = { bg = "foam", blend = 30 },
       },
     })
 
