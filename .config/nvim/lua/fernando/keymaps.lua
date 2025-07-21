@@ -80,10 +80,6 @@ set("n", "<leader>kx", "<cmd>source %<CR>", { desc = "Source file" })
 set("n", "<leader>ks", "<cmd>mksession! session.vim<CR>", { desc = "[S]ave session" })
 
 -- Quickfix navigation
-set("n", "[q", ":cprev<CR>zz", { desc = "Jump to previous quickfix item" })
-set("n", "]q", ":cnext<CR>zz", { desc = "Jump to next quickfix item" })
-set("n", "[Q", ":cfirst<CR>zz", { desc = "Jump to first quickfix item" })
-set("n", "]Q", ":clast<CR>zz", { desc = "Jump to last quickfix item" })
 set("n", "<leader>qo", ":copen<CR>", { desc = "Open quickfix list" })
 set("n", "<leader>qq", ":cclose<CR>", { desc = "Close quickfix list" })
 set("n", "<leader>qd", vim.diagnostic.setloclist, { desc = "Diagnostics" })
