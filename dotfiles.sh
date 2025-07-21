@@ -9,6 +9,7 @@ DOTFILES=(
 	".tool-versions"
 	".tmux.conf"
 	".wezterm.lua"
+	".config/karabiner.edn"
 	".config/nvim"
 	".config/atac"
 	".config/aerospace"

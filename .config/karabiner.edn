@@ -1,0 +1,77 @@
+{:simlayers {:f-mode {:key :f}    ; functional brakets  { } [ ] ( ) < > /
+             :d-mode {:key :d}    ; delimiters          = - + " ' § . ,
+             :v-mode {:key :v}    ; Number pad          7 8 9 4 5 6 1 2 3  
+             ; :s-mode {:key :s}    ; symbols             ! @ # $ % ^ & *
+             }
+ :main [;;
+        {:des "CAPSLOCK is CTRL if pressed in combination, otherwise ESC"
+         :rules [[:##caps_lock  :left_control  nil  {:alone :escape}]]}
+
+        {:des "f-mode for functional brakets"
+         :rules [:f-mode
+                 [:##u         :!Sopen_bracket]
+                 [:##i         :!Sclose_bracket]
+                 [:##o         :open_bracket]
+                 [:##p         :close_bracket]
+
+                 [:##j         :!S9]
+                 [:##k         :!S0]
+                 [:##l         :!Scomma]
+                 [:##semicolon :!Speriod]
+
+                 [:##m         :slash]]}
+
+                 ; { } [ ]
+                 ; ( ) < >   
+                 ; /
+
+        {:des "d-mode for delimiters"
+         :rules [:d-mode
+                 [:##u         :!Squote]
+                 [:##i         :quote]
+                 [:##o         :non_us_backslash]
+
+                 [:##j         :equal_sign]
+                 [:##k         :hyphen]
+                 [:##l         :!Scomma]
+                 [:##semicolon :!Speriod]]}
+
+                 ; "  '  `
+                 ; =  -  <  >
+
+; {:des "s-mode for symbols"
+        ;  :rules [:s-mode
+        ;          [:##u         :!S1] ; !
+        ;          [:##i         :!S2] ; @
+        ;          [:##o         :!S3] ; #
+        ;          [:##j         :!S4] ;
+        ;          [:##k         :!S5] ;
+        ;          [:##l         :!S6] ;
+        ;          [:##m         :!S7] ;
+        ;          ]}
+        ;
+        ;          ; ! @ # 
+        ;          ; $ % ^
+        ;          ; & *   
+
+        {:des "v-mode for number pad"
+         :rules [:v-mode
+                 [:u :7]
+                 [:i :8]
+                 [:o :9]
+                 [:j :4]
+                 [:k :5]
+                 [:l :6]
+                 [:m :1]
+                 [:comma :2]
+                 [:period :3]
+                 [:p :!Sequal_sign]
+                 [:semicolon :hyphen]
+                 [:slash :return_or_enter]
+                 [:y :delete_or_backspace]
+                 [:h :period]
+                 [:n :0]]}
+
+;; MISSING
+;; | \ ? / 
+        ]}
