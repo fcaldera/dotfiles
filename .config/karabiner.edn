@@ -1,14 +1,13 @@
-{:simlayers {:f-mode {:key :f}    ; functional brakets  { } [ ] ( ) < > /
-             :d-mode {:key :d}    ; delimiters          " ' ` = - < >  
+{:simlayers {:a-mode {:key :a}    ; brakets             { } [ ] ( ) < > /
+             :s-mode {:key :s}    ; symbols             "  '  `  ? !  =  -  <  > |
              :v-mode {:key :v}    ; Number pad          7 8 9 4 5 6 1 2 3  
-             :s-mode {:key :s}    ; symbols             ! @ # $ % ^ & *
              }
  :main [;;
         {:des "CAPSLOCK is CTRL if pressed in combination, otherwise ESC"
          :rules [[:##caps_lock  :left_control  nil  {:alone :escape}]]}
 
-        {:des "f-mode for functional brakets"
-         :rules [:f-mode
+        {:des "a-mode for brakets"
+         :rules [:a-mode
                  [:##u         :!Sopen_bracket]
                  [:##i         :!Sclose_bracket]
                  [:##o         :open_bracket]
@@ -25,11 +24,12 @@
                  ; ( ) < >   
                  ; /
 
-        {:des "d-mode for delimiters"
-         :rules [:d-mode
+        {:des "s-mode for symbols"
+         :rules [:s-mode
                  [:##u         :!Squote]
                  [:##i         :quote]
                  [:##o         :non_us_backslash]
+                 [:##p         :!Sslash]
 
                  [:##h         :!S1]
                  [:##j         :equal_sign]
@@ -37,29 +37,11 @@
                  [:##l         :!Scomma]
                  [:##semicolon :!Speriod]
 
-                 [:##m         :slash]]}
+                 [:##m         :!Sbackslash]]}
 
-                 ;    "  '  `
+                 ;    "  '  `  ?
                  ; !  =  -  <  >
-                 ;    /
-
-        {:des "s-mode for symbols"
-         :rules [:s-mode
-                 [:##u         :!Sslash]     ; ?
-                 [:##i         :!S2]         ; @
-                 [:##o         :!S3]         ; #
-                 [:##p         :!S4]         ; $
-
-                 [:##j         :!S7]         ; &
-                 [:##k         :!Sbackslash] ; |
-                 [:##l         :!Scomma]     ; <
-                 [:##semicolon :!Speriod]    ; >
-
-                 [:##m         :!S5]]}       ; % 
-
-                 ; ? @ # $
-                 ; & | < >
-                 ; %
+                 ;    |
 
         {:des "v-mode for number pad"
          :rules [:v-mode
@@ -77,11 +59,7 @@
                  [:slash :return_or_enter]
                  [:y :delete_or_backspace]
                  [:h :period]
-                 [:n :0]]}
+                 [:n :0]]}]}
 
-        ;; MISSING: / _ 
-        ]}
-
-;; PRACTICE
 
 
