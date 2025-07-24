@@ -46,15 +46,16 @@
         {:des "Backslash to ENTER"
          :rules [[:##backslash  :return_or_enter]]}
 
-        ; Code layout
-        ;  Y  U  I  O  P 
-        ;  H  J  K  L
-        ;  N  M  ,
-
-        ;  `  (  )  {  }
-        ;  !  =  -  <  >
-        ;  |  /  \
         {:des "code-mode for hard-to-type combinations"
+         ;; `` () {} != == => -> <> <- <= >= |> </>
+         ;;
+         ;;  Y  U  I  O  P 
+         ;;  H  J  K  L  ;
+         ;;  N  M  ,
+         ;;  
+         ;;  `  (  )  {  }
+         ;;  !  =  -  <  >
+         ;;  |  /  \
          :rules [[:grave_accent_and_tilde ["code-mode" 1] nil {:afterup ["code-mode" 0]}]
                  [:y            :non_us_backslash     ["code-mode" 1]]
                  [:u            :!S9                  ["code-mode" 1]]
@@ -62,14 +63,21 @@
                  [:o            :!Sopen_bracket       ["code-mode" 1]]
                  [:p            :!Sclose_bracket      ["code-mode" 1]]
 
-                 [:##h         :!S1                ["code-mode" 1]]
-                 [:##j         :equal_sign         ["code-mode" 1]]
-                 [:##k         :hyphen             ["code-mode" 1]]
-                 [:##l         :!Scomma            ["code-mode" 1]]
-                 [:##semicolon :!Speriod           ["code-mode" 1]]
+                 [:h            :!S1                  ["code-mode" 1]]
+                 [:j            :equal_sign           ["code-mode" 1]]
+                 [:k            :hyphen               ["code-mode" 1]]
+                 [:l            :!Scomma              ["code-mode" 1]]
+                 [:semicolon    :!Speriod             ["code-mode" 1]]
 
-                 [:##n         :!Sbackslash        ["code-mode" 1]]
-                 [:##m         :slash              ["code-mode" 1]]
-                 [:##comma     :backslash          ["code-mode" 1]]
+                 [:n            :!Sbackslash          ["code-mode" 1]]
+                 [:m            :slash                ["code-mode" 1]]
+                 [:comma        :backslash            ["code-mode" 1]]
+
+                 ;; Fallback SHIFT for other keys:
+                 [:open_bracket  :!Sopen_bracket  ["code-mode" 1]]
+                 [:close_bracket :!Sclose_bracket ["code-mode" 1]]
+
                  ;; 
-                 ]}]}
+                 ]}
+        ;; 
+        ]}
