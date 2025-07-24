@@ -1,65 +1,75 @@
-{:simlayers {:a-mode {:key :a}    ; brakets             { } [ ] ( ) < > /
-             :s-mode {:key :s}    ; symbols             "  '  `  ? !  =  -  <  > |
-             :v-mode {:key :v}    ; Number pad          7 8 9 4 5 6 1 2 3  
-             }
- :main [;;
-        {:des "CAPSLOCK is CTRL if pressed in combination, otherwise ESC"
+{;;
+    ;; !  | means mandatory -   modifier(s) alone when pressend change behavior
+    ;; #  | means optional  -   modifiers are optional (but atleast one necessary)
+
+    ;; :!Ca is keycode :a and prefix a with !C
+
+    ;; C  | left_command
+    ;; T  | left_control
+    ;; O  | left_option
+    ;; S  | left_shift
+    ;; F  | fn
+    ;; Q  | right_command
+    ;; W  | right_control
+    ;; E  | right_option
+    ;; R  | right_shift
+
+    ;; ## | optional any
+    ;; !! | command + control + optional + shift (hyper)
+
+    ;; Install via brew: `brew install yqrashawn/goku/goku`
+
+    ;; karabiner docs: ;; https://pqrs.org/osx/karabiner/json.html#complex_modifications-manipulator-definition
+    ;; <other options> includs ~to_if_alone~, ~to_if_held_down~,~to_after_key_up~, ~to_delayed_action~ and ~parameters~.
+
+    ;; (custom variables) & modifiers -> Advanced
+    ;; https://github.com/yqrashawn/GokuRakuJoudo/blob/master/examples.org#custom-variable
+
+    ;; Examples: https://github.com/yqrashawn/GokuRakuJoudo/blob/master/examples.org
+    ;; https://gist.github.com/kaushikgopal/ff7a92bbc887e59699c804b59074a126
+    ;; https://github.com/kchen0x/k-goku/blob/master/karabiner.edn
+
+ :profiles {:Default {:default true
+                      :sim     50     ;; simultaneous_threshold_milliseconds (def: 50)
+                                      ;; keys need to be pressed within this threshold to be considered simultaneous
+                      :delay   300    ;; to_delayed_action_delay_milliseconds (def: 500)
+                                      ;; basically it means time after which the key press is count delayed
+                      :alone   300    ;; to_if_alone_timeout_milliseconds (def: 1000)
+                                      ;; hold for 995s and single tap registered; hold for 1005s and seen as modifier
+                      :held    500    ;; to_if_held_down_threshold_milliseconds (def: 500)
+                                      ;; key is fired twice when 500 ms is elapsed (otherwise seen as a hold command)
+                      }}
+
+ :main [{:des "CAPSLOCK is CTRL if pressed in combination, otherwise ESC"
          :rules [[:##caps_lock  :left_control  nil  {:alone :escape}]]}
 
-        {:des "a-mode for brakets"
-         :rules [:a-mode
-                 [:##u         :!Sopen_bracket]
-                 [:##i         :!Sclose_bracket]
-                 [:##o         :open_bracket]
-                 [:##p         :close_bracket]
+        {:des "Backslash to ENTER"
+         :rules [[:##backslash  :return_or_enter]]}
 
-                 [:##j         :!S9]
-                 [:##k         :!S0]
-                 [:##l         :!Scomma]
-                 [:##semicolon :!Speriod]
+        ; Code layout
+        ;  Y  U  I  O  P 
+        ;  H  J  K  L
+        ;  N  M  ,
 
-                 [:##m         :slash]]}
+        ;  `  (  )  {  }
+        ;  !  =  -  <  >
+        ;  |  /  \
+        {:des "code-mode for hard-to-type combinations"
+         :rules [[:grave_accent_and_tilde ["code-mode" 1] nil {:afterup ["code-mode" 0]}]
+                 [:y            :non_us_backslash     ["code-mode" 1]]
+                 [:u            :!S9                  ["code-mode" 1]]
+                 [:i            :!S0                  ["code-mode" 1]]
+                 [:o            :!Sopen_bracket       ["code-mode" 1]]
+                 [:p            :!Sclose_bracket      ["code-mode" 1]]
 
-                 ; { } [ ]
-                 ; ( ) < >   
-                 ; /
+                 [:##h         :!S1                ["code-mode" 1]]
+                 [:##j         :equal_sign         ["code-mode" 1]]
+                 [:##k         :hyphen             ["code-mode" 1]]
+                 [:##l         :!Scomma            ["code-mode" 1]]
+                 [:##semicolon :!Speriod           ["code-mode" 1]]
 
-        {:des "s-mode for symbols"
-         :rules [:s-mode
-                 [:##u         :!Squote]
-                 [:##i         :quote]
-                 [:##o         :non_us_backslash]
-                 [:##p         :!Sslash]
-
-                 [:##h         :!S1]
-                 [:##j         :equal_sign]
-                 [:##k         :hyphen]
-                 [:##l         :!Scomma]
-                 [:##semicolon :!Speriod]
-
-                 [:##m         :!Sbackslash]]}
-
-                 ;    "  '  `  ?
-                 ; !  =  -  <  >
-                 ;    |
-
-        {:des "v-mode for number pad"
-         :rules [:v-mode
-                 [:u :7]
-                 [:i :8]
-                 [:o :9]
-                 [:j :4]
-                 [:k :5]
-                 [:l :6]
-                 [:m :1]
-                 [:comma :2]
-                 [:period :3]
-                 [:p :!Sequal_sign]
-                 [:semicolon :hyphen]
-                 [:slash :return_or_enter]
-                 [:y :delete_or_backspace]
-                 [:h :period]
-                 [:n :0]]}]}
-
-
-
+                 [:##n         :!Sbackslash        ["code-mode" 1]]
+                 [:##m         :slash              ["code-mode" 1]]
+                 [:##comma     :backslash          ["code-mode" 1]]
+                 ;; 
+                 ]}]}
