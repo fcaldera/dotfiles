@@ -46,13 +46,15 @@
         {:des "Backslash to ENTER"
          :rules [[:##backslash  :return_or_enter]]}
 
+        ;; Custom layout for keys that require moving the hands too far from the 
+        ;; homerow making them hard to reach and prone to errors. [SHIT + `]
         {:des "hk-mode for hard-to-reach keys"
-         ;;     U  I       
-         ;;     J  K      
+         ;;     U  I
+         ;;     J  K  L      
          ;;     M   
          ;;  
-         ;;     +  ^  ~ 
-         ;;     "  `  
+         ;;     +  ^   
+         ;;     "  `  ~
          ;;     \   
          :rules [[:!Sgrave_accent_and_tilde ["hk-mode" 1] nil {:afterup ["hk-mode" 0]}]
                  [:!Su          :!Sequal_sign         ["hk-mode" 1]]
@@ -66,12 +68,14 @@
                  ;; 
                  ]}
 
+        ;; Custom layout for keys that are frequently typed together, specially
+        ;; when coding. [`]
         {:des "arrow-mode for frequently used combinations"
-         ;; `` () {} != == => -> <> <- <= >= |> </>
+         ;; () {} != == => -> <> <- <= >= |> </>
          ;;
          ;;     U  I  O  P 
          ;;  H  J  K  L  ;
-         ;;  N  M  ,
+         ;;  N  M   
          ;;  
          ;;     (  )  {  }
          ;;  !  =  -  <  >
