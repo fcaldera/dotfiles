@@ -48,21 +48,24 @@
 
         ;; Custom layout for keys that require moving the hands too far from the 
         ;; homerow making them hard to reach and prone to errors. [SHIT + `]
-        {:des "hk-mode for hard-to-reach keys"
+        {:des "hk-mode for hard-to-reach keys and math"
          ;;     U  I
-         ;;     J  K  L      
+         ;;  H  J  K  L      
          ;;     M   
          ;;  
-         ;;     +  ^   
-         ;;     "  `  ~
+         ;;     `  ~  ^
+         ;;  %  +  -  *  /
          ;;     \   
          :rules [[:!Sgrave_accent_and_tilde ["hk-mode" 1] nil {:afterup ["hk-mode" 0]}]
-                 [:!Su          :!Sequal_sign         ["hk-mode" 1]]
-                 [:!Si          :!S6                  ["hk-mode" 1]]
+                 [:!Su          :non_us_backslash     ["hk-mode" 1]]
+                 [:!Si          :!Snon_us_backslash   ["hk-mode" 1]]
+                 [:!So          :!S6                  ["hk-mode" 1]]
 
-                 [:!Sj          :!Squote              ["hk-mode" 1]]
-                 [:!Sk          :non_us_backslash     ["hk-mode" 1]]
-                 [:!Sl          :!Snon_us_backslash   ["hk-mode" 1]]
+                 [:!Sh          :!S5                  ["hk-mode" 1]]
+                 [:!Sj          :!Sequal_sign         ["hk-mode" 1]]
+                 [:!Sk          :hyphen               ["hk-mode" 1]]
+                 [:!Sl          :!S8                  ["hk-mode" 1]]
+                 [:!Ssemicolon  :slash                ["hk-mode" 1]]
 
                  [:!Sm          :backslash            ["hk-mode" 1]]
                  ;; 
