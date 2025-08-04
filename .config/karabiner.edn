@@ -49,8 +49,8 @@
         ;; Custom layout for keys that require moving the hands too far from the 
         ;; homerow making them hard to reach and prone to errors. [SHIT + `]
         {:des "hk-mode for hard-to-reach keys and math"
-         ;;     U  I
-         ;;  H  J  K  L      
+         ;;     U  I  O
+         ;;  H  J  K  L  ;      
          ;;     M   
          ;;  
          ;;     `  ~  ^
