@@ -15,13 +15,12 @@ brew install fisher
 fisher install pure-fish/pure
 
 # Plugins
-fisher install jethrokuan/z
 fisher install edc/bass
 fisher install nickeb96/expanddots
 
 brew install elixir
-# brew install erlang
-# brew install exercism
+brew install erlang
+brew install exercism
 brew install fzf
 brew install gh
 brew install jq
@@ -33,7 +32,8 @@ brew install trash
 brew install tree
 brew install entr
 brew install asdf
-brew install lazygit
+brew install goku
+brew install zoxide
 
 brew install julien-cpsn/atac/atac
 brew install FelixKratz/formulae/borders
@@ -53,10 +53,6 @@ brew install --cask wezterm
 brew install --cask spotify
 brew install --cask google-chrome
 brew install --cask raycast
-# brew install iterm2
-# brew install --cask firefox
-# brew install --cask visual-studio-code
-# brew install --cask zoom
 brew install --cask nikitabobko/tap/aerospace
 
 # TMUX

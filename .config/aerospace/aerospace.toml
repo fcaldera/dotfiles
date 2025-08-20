@@ -10,7 +10,7 @@ after-login-command = []
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [ 
-  "exec-and-forget borders active_color=0x88ffffff inactive_color=0x00ffffff width=5.0 hidpi=on blacklist='Spotify,Simulator'" 
+  "exec-and-forget borders active_color=0x88ffffff inactive_color=0x00ffffff width=5.0 hidpi=on" 
 ]
 
 # Start AeroSpace at login
