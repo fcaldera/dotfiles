@@ -1,23 +1,33 @@
 #!/usr/bin/env bash
 
-# install the tools required to run dotfiles
+echo "Installing homebrew..."
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
-printf >&2 '%s\n' "Checking required tools..."
+echo "Installing fish shell..."
+brew install fish
+echo $(which fish) | sudo tee -a /etc/shells
+chsh -s $(which fish)
 
-if ! command -v -- "brew" >/dev/null 2>&1; then
-	printf >&2 '%s\n' "Homebrew not found. Installing..."
-	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-	echo >>$HOME/.zprofile
-	echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>$HOME/.zprofile
-	eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
+exec fish
 
-if ! command -v -- "fish" >/dev/null 2>&1; then
-	brew install fish
+fish -c "
+  set -Ux HOMEBREW_NO_ENV_HINTS 1
+  fish_add_path /opt/homebrew/sbin
+  fish_add_path /opt/homebrew/bin
+"
 
-	# Set as default shell
-	echo $(which fish) | sudo tee -a /etc/shells
-	chsh -s $(which fish)
-fi
+# Fish package manager
+brew install fisher
+
+# Fish Prompt
+fisher install pure-fish/pure
+
+# Plugins
+fisher install edc/bass
+fisher install nickeb96/expanddots
+
+# TMUX package manager
+git clone https://github.com/tmux-plugins/tpm $TMP_DIR
 
 echo "Done!"

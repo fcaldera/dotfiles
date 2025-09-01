@@ -2,25 +2,6 @@
 
 # Install command-line and apps tools using Homebrew.
 # https://github.com/mathiasbynens/dotfiles/blob/main/brew.sh
-set -Ux HOMEBREW_NO_ENV_HINTS 1
-
-# Configure fish shell
-fish_add_path /opt/homebrew/sbin
-fish_add_path /opt/homebrew/bin
-
-# Package manager
-brew install fisher
-
-# Prompt
-fisher install pure-fish/pure
-
-# Plugins
-fisher install edc/bass
-fisher install nickeb96/expanddots
-
-brew install elixir
-brew install erlang
-brew install exercism
 brew install fzf
 brew install gh
 brew install jq
@@ -32,14 +13,21 @@ brew install trash
 brew install tree
 brew install entr
 brew install asdf
-brew install goku
 brew install zoxide
+brew install tree-sitter-cli
+brew install yqrashawn/goku/goku
 
 brew install julien-cpsn/atac/atac
 brew install FelixKratz/formulae/borders
 
-# Elixir/Erlang Dependencies
-brew install autoconf openssl wxwidgets
+# NodeJS
+brew install gpg gawk
+asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+asdf install nodejs
+
+# Elixir/Erlang
+brew install erlang
+brew install elixir
 
 # Fonts
 brew install font-input
@@ -51,9 +39,7 @@ brew install font-jetbrains-mono
 # Apps
 brew install --cask wezterm
 brew install --cask spotify
-brew install --cask google-chrome
 brew install --cask raycast
 brew install --cask nikitabobko/tap/aerospace
-
-# TMUX
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+brew install --cask karabiner-elements
+# brew install --cask google-chrome

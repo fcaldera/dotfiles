@@ -6,10 +6,7 @@ Run in following order:
 
 ```sh
 sudo bash prepare.sh
-# restart the session with `exec fish` then run
-bash brew.sh
-bash asdf.sh
-bash doftiles.sh
+sudo bash setup.sh
 ```
 
 ## Notes

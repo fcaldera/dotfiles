@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-# dotfiles.sh
-# symlink my dotfiles to appropriate places
+echo "Symlink dotfiles..."
 
 DOTFILES=(
 	".gitconfig"
