@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-# Install command-line and apps tools using Homebrew.
+# Install command-line tools and apps
 # https://github.com/mathiasbynens/dotfiles/blob/main/brew.sh
+
 brew install fzf
 brew install gh
 brew install jq
@@ -43,4 +44,5 @@ brew install --cask spotify
 brew install --cask raycast
 brew install --cask nikitabobko/tap/aerospace
 brew install --cask karabiner-elements
-# brew install --cask google-chrome
+brew install --cask appcleaner
+brew install --cask google-chrome
