@@ -59,6 +59,9 @@ defaults write com.apple.WindowManager EnableStageManagerClickToShowDesktop -boo
 # Turn Stage Manager off
 defaults write com.apple.WindowManager GloballyEnabled -bool false
 
+# Appearance to Auto (Light/Dark mode)
+defaults write -g AppleInterfaceStyleSwitchesAutomatically -bool true
+
 # Restart to apply changes
 killall SystemUIServer
 killall Dock
