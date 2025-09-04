@@ -21,6 +21,7 @@ brew install joshuto
 
 brew install julien-cpsn/atac/atac
 brew install FelixKratz/formulae/borders
+brew install 1password-cli
 
 # NodeJS
 brew install gpg gawk
@@ -30,6 +31,11 @@ asdf install nodejs
 # Elixir/Erlang
 brew install erlang
 brew install elixir
+
+# Docker
+brew install docker
+brew install colima
+./install-docker-compose.sh
 
 # Fonts
 brew install font-input
