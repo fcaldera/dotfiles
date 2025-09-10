@@ -18,6 +18,7 @@ brew install zoxide
 brew install tree-sitter-cli
 brew install yqrashawn/goku/goku
 brew install joshuto
+brew install pgcli
 
 brew install julien-cpsn/atac/atac
 brew install FelixKratz/formulae/borders
