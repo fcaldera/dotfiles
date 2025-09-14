@@ -169,3 +169,30 @@ alt-shift-l = ['join-with right', 'mode main']
 [[on-window-detected]]
 if.app-id = 'com.apple.Passwords'
 run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.github.wez.wezterm'
+run = 'move-node-to-workspace A'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Slack|Messages'
+run = 'move-node-to-workspace S'
+
+# TODO: condigure D for DataGrip
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+run = 'move-node-to-workspace F'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Finder|Mail|Notes|Reminders|Calendar|Photos|Bear'
+run = 'move-node-to-workspace G'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Perplexity|ChatGPT'
+run = 'move-node-to-workspace V'
+
+[[on-window-detected]]
+if.app-id = 'com.spotify.client'
+run = 'move-node-to-workspace C'
+
