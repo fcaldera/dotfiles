@@ -43,8 +43,15 @@
  :main [{:des "CAPSLOCK is CTRL if pressed in combination, otherwise ESC"
          :rules [[:##caps_lock  :left_control  nil  {:alone :escape}]]}
 
-        {:des "Backslash to ENTER"
-         :rules [[:##backslash  :return_or_enter]]}
+        {:des "Backslash to ENTER" :rules [[:##backslash  :return_or_enter]]}
+
+        {:des "Swap right COMMAND/ALT"
+         :rules [[:##right_command :right_option] [:##right_option :right_command]]}
+
+        {:des "Simpress JK to )" :rules [[[:j :k]  :!S0]]}
+        {:des "Simpress DF to )" :rules [[[:d :f]  :!S9]]}
+
+        ; {:des "simultaneous SPACE ; press to ALT" :rules [[[:spacebar :semicolon] :right_option]]}
 
         ;; Custom layout for keys that require moving the hands too far from the 
         ;; homerow making them hard to reach and prone to errors. [SHIT + `]
