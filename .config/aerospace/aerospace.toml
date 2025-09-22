@@ -185,7 +185,7 @@ if.app-id = 'com.google.Chrome'
 run = 'move-node-to-workspace F'
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'Finder|Mail|Notes|Reminders|Calendar|Photos|Bear'
+if.app-name-regex-substring = 'Finder|Mail|Notes|Reminders|Calendar|Photos|Bear|Preview'
 run = 'move-node-to-workspace G'
 
 [[on-window-detected]]
