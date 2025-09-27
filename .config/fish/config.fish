@@ -1,6 +1,7 @@
 # Abbreviations
 abbr -a lh "ls -A | egrep '^\.'"
 abbr -a kube 'kubectl'
+abbr -a doco 'docker compose'
 
 # Environment
 set -x ATAC_KEY_BINDINGS ~/.config/atac/key_bindings.toml
