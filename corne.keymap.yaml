@@ -1,0 +1,58 @@
+layout:
+  qmk_keyboard: crkbd/rev4_1
+  layout_name: LAYOUT_split_3x6_3
+layers:
+  DEF:
+    - ["Esc", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", $$mdi:backspace-outline$$]
+    - ["Ctrl", "A", "S", "D", "F", "G", "H", "J", "K", "L", ";", "Ctrl"]
+    - ["Shift", "Z", "X", "C", "V", "B", "N", "M", ",", ".", "/", "Shift"]
+    - {h: Shift, t: Del}
+    - {h: NAV,   t: $$mdi:keyboard-tab$$}
+    - {h: Gui,   t: Esc}
+    - {h: Alt,   t: $$mdi:backspace-outline$$}
+    - {h: SYM,   t: $$mdi:keyboard-space$$}
+    - {h: Shift, t: $$mdi:keyboard-return$$}
+  NAV:
+    - ["Esc", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", $$mdi:backspace-outline$$]
+    - ["Ctrl", "OSM Shift", "OSM Ctrl", "OSM Alt", "OSM Gui", null, "Left", "Down", "Up", "Right", null, "Ctrl"]
+    - ["Shift", null, null, null, null, null, null, null, null, null, null, "Shift"]
+    - null
+    - {type: held}
+    - null
+    - {h: Alt, t: $$mdi:backspace-outline$$}
+    - MED
+    - {t: NUM, type: ghost}
+  SYM:
+    - ["Esc", "`", "<", "-", ">", "|", "^", "{", "$", "}", "-", $$mdi:backspace-outline$$]
+    - ["Ctrl", "!", "*", "/", "=", "&", "#", "[", "\"", "]", "'", "Ctrl"]
+    - ["Shift", null, "\\", "+", "~", "%", "@", "(", "_", ")", "?", "Shift"]
+    - {h: Shift, t: Del}
+    - MED
+    - {h: Gui,   t: Esc}
+    - null
+    - {type: held}
+    - null
+  NUM:
+    - [null, null, "(", "Up", ")", null, "/", "7", "8", "9", "-", null]
+    - [null, null, "Left", "Down", "Right", null, "*", "4", "5", "6", "+", null]
+    - [null, null, null, "#", "$", null, "%", "1", "2", "3", ".", "="]
+    - Del
+    - $$mdi:keyboard-space$$
+    - $$mdi:keyboard-return$$
+    - $$mdi:backspace-outline$$
+    - 0
+    - {t: DEF, type: ghost}
+  MED:
+    - ["BOOT", null, "RBG M1", "RGB M2", "RGB M3", null, null, "Bright -", null, "Bright +", null, null]
+    - ["RGB Tog", "RGB Hue+", "RGB Sat+", "RGB Bri+", "RGB Eff+", null, null, "Vol -", "Mute", "Vol +", null, null]
+    - ["RGB Mode+", "RGB Hue-", "RGB Sat-", "RGB Bri-", "RGB Eff-", null, null, $$mdi:skip-previous$$, $$mdi:play-pause$$, $$mdi:skip-next$$, null, null]
+    - null
+    - {type: held}
+    - null
+    - null
+    - {type: held}
+    - null
+combos:
+  - {p: [15, 16], k: "(", l: ["DEF"]}
+  - {p: [19, 20], k: ")", l: ["DEF"]}
+    
