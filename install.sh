@@ -54,3 +54,4 @@ brew install --cask karabiner-elements
 brew install --cask appcleaner
 brew install --cask google-chrome
 brew install --cask chatgpt
+brew install --cask homerow
