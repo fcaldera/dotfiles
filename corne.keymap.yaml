@@ -1,3 +1,7 @@
+# Keymap-drawer 
+# A visualizer for keyboard keymaps 
+# https://keymap-drawer.streamlit.app/
+
 layout:
   qmk_keyboard: crkbd/rev4_1
   layout_name: LAYOUT_split_3x6_3
@@ -7,24 +11,24 @@ layers:
     - ["Ctrl", "A", "S", "D", "F", "G", "H", "J", "K", "L", ";", "Ctrl"]
     - ["Shift", "Z", "X", "C", "V", "B", "N", "M", ",", ".", "/", "Shift"]
     - {h: Shift, t: Del}
-    - {h: NAV,   t: $$mdi:keyboard-tab$$}
+    - {h: NUM,   t: $$mdi:keyboard-tab$$}
     - {h: Gui,   t: Esc}
     - {h: Alt,   t: $$mdi:backspace-outline$$}
     - {h: SYM,   t: $$mdi:keyboard-space$$}
     - {h: Shift, t: $$mdi:keyboard-return$$}
-  NAV:
-    - ["Esc", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", $$mdi:backspace-outline$$]
-    - ["Ctrl", "OSM Shift", "OSM Ctrl", "OSM Alt", "OSM Gui", null, "Left", "Down", "Up", "Right", null, "Ctrl"]
-    - ["Shift", null, null, null, null, null, null, null, null, null, null, "Shift"]
+  NUM:
+    - [null, "€", "@", "#", "$", "%", "/", {t: "7", s: "&" }, {t: "8", s: "*"}, {t: "6", s: "^"}, "-", $$mdi:backspace-outline$$ ]
+    - [null, "OSM Shift", "OSM Ctrl", "OSM Alt", "OSM Gui", null, {t: "0", s: ")"}, {t: "4", s: "$"}, {t: "5", s: "%"}, {t: "6", s: "^"}, "+", "="] 
+    - [null, null, null, null, null, null, "*", {t: "1", s: "!" }, {t: "2", s: "@"}, {t: "3", s: "#"}, ".", ","]
     - null
     - {type: held}
     - null
-    - {h: Alt, t: $$mdi:backspace-outline$$}
+    - NAV
     - MED
-    - {t: NUM, type: ghost}
+    - {h: Shift, t: $$mdi:keyboard-return$$}
   SYM:
-    - ["Esc", "`", "<", "-", ">", "|", "^", "{", "$", "}", "-", $$mdi:backspace-outline$$]
-    - ["Ctrl", "!", "*", "/", "=", "&", "#", "[", "\"", "]", "'", "Ctrl"]
+    - ["Esc", "`", "<", "-", ">", "|", "^", "{", "$", "}", "'", $$mdi:backspace-outline$$]
+    - ["Ctrl", "!", "*", "/", "=", "&", "#", "[", "\"", "]", ":", "Ctrl"]
     - ["Shift", null, "\\", "+", "~", "%", "@", "(", "_", ")", "?", "Shift"]
     - {h: Shift, t: Del}
     - MED
@@ -32,20 +36,20 @@ layers:
     - null
     - {type: held}
     - null
-  NUM:
-    - [null, null, "(", "Up", ")", null, "/", "7", "8", "9", "-", null]
-    - [null, null, "Left", "Down", "Right", null, "*", "4", "5", "6", "+", null]
-    - [null, null, null, "#", "$", null, "%", "1", "2", "3", ".", "="]
-    - Del
-    - $$mdi:keyboard-space$$
-    - $$mdi:keyboard-return$$
-    - $$mdi:backspace-outline$$
-    - 0
-    - {t: DEF, type: ghost}
+  NAV:
+    - [null, "Back", "Fwd", "Prev Tab", "Next Tab", null, null, "TMUX 0", "TMUX 1", "TMUX 2", "TMUX 3", null]
+    - [null, "OSM Shift", "OSM Ctrl", "OSM Alt", "OSM Gui", null, "Left", "Down", "Up", "Right", null, null,]
+    - [null, null, null, null, null, null, null, null, null, null, null, null]
+    - null
+    - {type: held}
+    - null
+    - {type: held}
+    - null
+    - null
   MED:
-    - ["BOOT", null, "RBG M1", "RGB M2", "RGB M3", null, null, "Bright -", null, "Bright +", null, null]
-    - ["RGB Tog", "RGB Hue+", "RGB Sat+", "RGB Bri+", "RGB Eff+", null, null, "Vol -", "Mute", "Vol +", null, null]
-    - ["RGB Mode+", "RGB Hue-", "RGB Sat-", "RGB Bri-", "RGB Eff-", null, null, $$mdi:skip-previous$$, $$mdi:play-pause$$, $$mdi:skip-next$$, null, null]
+    - ["BOOT", null, "RBG M1", "RGB M2", "RGB M3", null, null, "Bri -", null, "Bri +", null, null]
+    - ["RGB Tog", "RGB Hue+", "RGB Sat+", "RGB Bri+", "RGB Eff+", "RGB Mod+", null, "Vol -", "Mute", "Vol +", null, null]
+    - [null, "RGB Hue-", "RGB Sat-", "RGB Bri-", "RGB Eff-", "RGB Mod-", null, $$mdi:skip-previous$$, $$mdi:play-pause$$, $$mdi:skip-next$$, null, null]
     - null
     - {type: held}
     - null
@@ -55,4 +59,5 @@ layers:
 combos:
   - {p: [15, 16], k: "(", l: ["DEF"]}
   - {p: [19, 20], k: ")", l: ["DEF"]}
-    
+draw_config:
+  glyph_tap_size: 18
