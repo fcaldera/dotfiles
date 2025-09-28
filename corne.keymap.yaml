@@ -1,7 +1,5 @@
-# Keymap-drawer 
-# A visualizer for keyboard keymaps 
+# Keymap-drawer: A visualizer for keyboard keymaps 
 # https://keymap-drawer.streamlit.app/
-
 layout:
   qmk_keyboard: crkbd/rev4_1
   layout_name: LAYOUT_split_3x6_3
@@ -23,15 +21,15 @@ layers:
     - null
     - {type: held}
     - null
-    - NAV
-    - MED
+    - {h: NAV, t: $$mdi:backspace-outline$$}
+    - {h: MEDIA,   t: $$mdi:keyboard-space$$}
     - {h: Shift, t: $$mdi:keyboard-return$$}
   SYM:
     - ["Esc", "`", "<", "-", ">", "|", "^", "{", "$", "}", "'", $$mdi:backspace-outline$$]
     - ["Ctrl", "!", "*", "/", "=", "&", "#", "[", "\"", "]", ":", "Ctrl"]
     - ["Shift", null, "\\", "+", "~", "%", "@", "(", "_", ")", "?", "Shift"]
     - {h: Shift, t: Del}
-    - MED
+    - MEDIA
     - {h: Gui,   t: Esc}
     - null
     - {type: held}
@@ -46,7 +44,7 @@ layers:
     - {type: held}
     - null
     - null
-  MED:
+  MEDIA:
     - ["BOOT", null, "RBG M1", "RGB M2", "RGB M3", null, null, "Bri -", null, "Bri +", null, null]
     - ["RGB Tog", "RGB Hue+", "RGB Sat+", "RGB Bri+", "RGB Eff+", "RGB Mod+", null, "Vol -", "Mute", "Vol +", null, null]
     - [null, "RGB Hue-", "RGB Sat-", "RGB Bri-", "RGB Eff-", "RGB Mod-", null, $$mdi:skip-previous$$, $$mdi:play-pause$$, $$mdi:skip-next$$, null, null]
