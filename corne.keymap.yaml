@@ -18,24 +18,24 @@ layers:
     - [null, "€", "@", "#", "$", "%", "/", {t: "7", s: "&" }, {t: "8", s: "*"}, {t: "6", s: "^"}, "-", $$mdi:backspace-outline$$ ]
     - [null, "OSM Shift", "OSM Ctrl", "OSM Alt", "OSM Gui", null, {t: "0", s: ")"}, {t: "4", s: "$"}, {t: "5", s: "%"}, {t: "6", s: "^"}, "+", "="] 
     - [null, null, null, null, null, null, "*", {t: "1", s: "!" }, {t: "2", s: "@"}, {t: "3", s: "#"}, ".", ","]
-    - null
+    - {h: Shift, t: Del, type: trans}
     - {type: held}
-    - null
-    - {h: NAV, t: $$mdi:backspace-outline$$}
-    - {h: MEDIA,   t: $$mdi:keyboard-space$$}
-    - {h: Shift, t: $$mdi:keyboard-return$$}
+    - {h: Gui,   t: Esc, type: trans}
+    - {h: NAV,   t: $$mdi:backspace-outline$$}
+    - {h: MEDIA, t: $$mdi:keyboard-space$$}
+    - {h: Shift, t: $$mdi:keyboard-return$$, type: trans}
   SYM:
     - ["Esc", "`", "<", "-", ">", "|", "^", "{", "$", "}", "'", $$mdi:backspace-outline$$]
     - ["Ctrl", "!", "*", "/", "=", "&", "#", "[", "\"", "]", ":", "Ctrl"]
     - ["Shift", null, "\\", "+", "~", "%", "@", "(", "_", ")", "?", "Shift"]
-    - {h: Shift, t: Del}
-    - MEDIA
-    - {h: Gui,   t: Esc}
-    - null
+    - {h: Shift, t: Del, type: trans}
+    - {h: MEDIA, t: $$mdi:keyboard-tab$$ }
+    - {h: Gui,   t: Esc, type: trans}
+    - {h: Alt,   t: $$mdi:backspace-outline$$, type: trans}
     - {type: held}
-    - null
+    - {h: Shift, t: $$mdi:keyboard-return$$, type: trans}
   NAV:
-    - [null, "Back", "Fwd", "Prev Tab", "Next Tab", null, null, "TMUX 0", "TMUX 1", "TMUX 2", "TMUX 3", null]
+    - ["First Tab", "Nav Back", "Nav Fwd", "Prev Tab", "Next Tab", "Last Tab", null, "TMUX 0", "TMUX 1", "TMUX 2", "TMUX 3", null]
     - [null, "OSM Shift", "OSM Ctrl", "OSM Alt", "OSM Gui", null, "Left", "Down", "Up", "Right", null, null,]
     - [null, null, null, null, null, null, null, null, null, null, null, null]
     - null
