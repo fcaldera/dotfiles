@@ -22,8 +22,19 @@ https://github.com/markstos/qmk_userspace/blob/main/VIAL.md
 
 ### SYM
 
+v4 [stable]
+
 ```
-   !  @  #  $  %     ^  &  *  ?  ' 
-   +  =  (  )  "     :  }  {  ]  [ 
-   <  |  -  >  \     `  _  /  ~  ; 
+    !  @  #  $  %     ^  &  *  ?  ' 
+    +  =  (  )  "     :  }  {  ]  [ 
+    <  |  -  >  \     `  _  /  ~  ; 
 ```
+
+v5 [experimental]
+
+```
+    [  ]  {  }  %     #  "  `  @  :  
+    !  =  (  )  $     ^  ⌘  ⌃  ⌥  ⇧  
+    <  |  -  >  \     /  *  +  ~  &
+```
+
