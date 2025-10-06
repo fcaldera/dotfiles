@@ -96,7 +96,7 @@ outer.right =      10
 # '''
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
-alt-semicolon = 'layout tiles accordion'
+alt-comma = 'layout tiles accordion'
 alt-slash = 'layout horizontal vertical'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
