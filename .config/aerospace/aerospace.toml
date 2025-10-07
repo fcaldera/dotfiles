@@ -179,7 +179,7 @@ if.app-id = 'com.github.wez.wezterm'
 run = 'move-node-to-workspace A'
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'Slack|Messages'
+if.app-name-regex-substring = 'Slack|Messages|FaceTime'
 run = 'move-node-to-workspace S'
 
 [[on-window-detected]]
