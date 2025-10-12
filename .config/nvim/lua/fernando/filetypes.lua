@@ -9,5 +9,6 @@ vim.filetype.add({
   extension = {
     hbs = "html",
     ejs = "ejs",
+    vil = "json",
   },
 })
