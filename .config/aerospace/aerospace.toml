@@ -172,7 +172,11 @@ run = 'layout floating'
 
 [[on-window-detected]]
 if.app-id = 'com.amazonaws.acvc.osx'
-run = 'move-node-to-workspace A'
+run = 'move-node-to-workspace W'
+  
+[[on-window-detected]]
+if.app-id = 'today.vial'
+run = 'move-node-to-workspace W'
   
 [[on-window-detected]]
 if.app-id = 'com.github.wez.wezterm'
