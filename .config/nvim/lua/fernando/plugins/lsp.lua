@@ -204,15 +204,6 @@ return {
               },
             },
           },
-          init_options = {
-            plugins = {
-              {
-                name = "@vue/typescript-plugin",
-                location = "/Users/fernando/.asdf/installs/nodejs/22.11.0/lib/node_modules/@vue/typescript-plugin",
-                languages = { "javascript", "typescript", "vue" },
-              },
-            },
-          },
           filetypes = {
             "javascript",
             "javascriptreact",
@@ -220,11 +211,8 @@ return {
             "typescript",
             "typescriptreact",
             "typescript.tsx",
-            "vue",
           },
         },
-
-        vue_ls = {},
 
         jsonls = {
           settings = {
@@ -248,7 +236,6 @@ return {
         },
 
         elixirls = {
-          cmd = { "/Users/fernando/.local/share/nvim/mason/packages/elixir-ls/language_server.sh" },
           root_dir = require("lspconfig.util").root_pattern({ "mix.exs" }),
         },
 
