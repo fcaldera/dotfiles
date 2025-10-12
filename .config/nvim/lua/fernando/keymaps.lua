@@ -51,8 +51,6 @@ set("n", "<leader>ga", "<cmd>Gwrite<CR>", { desc = "Git [A]dd" })
 set("n", "<leader>gr", "<cmd>Gread<CR>", { desc = "Git [R]eload" })
 set("n", "<leader>gl", "<cmd>Git log --oneline %<CR>", { desc = "Git [L]og" })
 set("n", "<leader>gc", "<cmd>Git commit<CR>", { desc = "Git [C]ommit" })
--- set("n", "<leader>gd", vim.cmd.DiffviewOpen, { desc = "Git [D]iff" })
--- set("n", "<leader>gh", vim.cmd.DiffviewFileHistory, { desc = "Git [H]istory" })
 
 set("n", "<leader>gq", function()
   local winids = vim.api.nvim_list_wins()
