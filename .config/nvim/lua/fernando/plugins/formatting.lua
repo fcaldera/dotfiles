@@ -54,6 +54,7 @@ return {
         options = {
           ext_parsers = {
             ejs = "html",
+            vil = "json",
           },
         },
       },
