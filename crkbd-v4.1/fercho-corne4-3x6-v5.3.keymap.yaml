@@ -25,22 +25,22 @@ layers:
     - $$mdi:keyboard-space$$
     - $$mdi:keyboard-return$$
   NAV:
-    - ["Esc", 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, $$mdi:backspace-outline$$]
-    - ["Alt", "OSM Shift", "OSM Alt", "OSM Ctrl", "OSM Gui", "Menu", $$mdi:chevron-left$$, $$mdi:chevron-down$$, $$mdi:chevron-up$$, $$mdi:chevron-right$$, null, "Alt"] 
-    - ["Shift", "Caps Lock", "OSM SA", null, "OSM SG", "TG NUM", null, null, null, ".", null, "Shift"]
+    - [{t: "Esc", type: trans}, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, {t: $$mdi:backspace-outline$$, type: trans}]
+    - [{t: "Alt", type: trans}, "OSM Shift", "OSM Alt", "OSM Ctrl", "OSM Gui", "Menu", $$mdi:chevron-left$$, $$mdi:chevron-down$$, $$mdi:chevron-up$$, $$mdi:chevron-right$$, null, {t: "Alt", type: trans}] 
+    - [{t: "Shift", type: trans}, "Caps Lock", "OSM SA", "OSM CS", "OSM SG", "TG NUM", null, null, null, ".", null, {t: "Shift", type: trans}]
     - {t: Gui}
     - {h: Ctrl, t: $$mdi:keyboard-tab$$}
     - {type: held}
-    - {h: MED, t: $$mdi:backspace-outline$$}
+    - {h: MEDIA, t: $$mdi:backspace-outline$$}
     - $$mdi:keyboard-space$$
     - $$mdi:keyboard-return$$
   SYM:
-    - ["Esc", "[", "]", "{", "}", "%", "#", "*", "'", "@", "+", $$mdi:backspace-outline$$]
-    - ["Alt", "!", "=", "(", ")", "$", "^", "OSM GUI", "OSM Ctrl", "OSM Alt", "OSM Shift", "Alt"]
-    - ["Shift", "<", "|", "-", ">", "\\", "&", "_", "/", "~", "€", "Shift"]
+    - [{t: "Esc", type: trans}, "[", "]", "{", "}", "%", "#", "*", "'", "@", "+", {t: $$mdi:backspace-outline$$, type: trans}]
+    - [{t: "Alt", type: trans}, "!", "=", "(", ")", "$", "^", "OSM GUI", "OSM Ctrl", "OSM Alt", "OSM Shift", {t: "Alt", type: trans}]
+    - [{t: "Shift", type: trans}, "<", "|", "-", ">", "\\", "&", "_", "/", "~", "€", {t: "Shift", type: trans}]
     - {t: Gui}
     - {h: Ctrl, t: $$mdi:keyboard-tab$$}
-    - {h: MED, t: Esc}
+    - {h: MEDIA, t: Esc}
     - {type: held}
     - $$mdi:keyboard-space$$
     - $$mdi:keyboard-return$$
