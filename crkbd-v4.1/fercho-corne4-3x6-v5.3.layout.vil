@@ -62,7 +62,7 @@
         "OSM(MOD_LALT)",
         "OSM(MOD_LCTL)",
         "OSM(MOD_LGUI)",
-        "LCTL_T(KC_BTN2)",
+        "KC_APPLICATION",
         "KC_NO"
       ],
       [
