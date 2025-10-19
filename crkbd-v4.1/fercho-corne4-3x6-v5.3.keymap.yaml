@@ -55,6 +55,7 @@ layers:
     - $$mdi:keyboard-space$$
     - $$mdi:keyboard-return$$
 combos:
+  - {p: [2, 3], k: "@", l: ["DEF"]}
   - {p: [3, 4], k: "`", l: ["DEF"]}
   - {p: [7, 8], k: "\"", l: ["DEF"]}
   - {p: [15, 16], k: "?", l: ["DEF"]}
