@@ -15,6 +15,7 @@ DOTFILES=(
 	".config/joshuto"
 	".config/fish/config.fish"
 	".config/fish/functions/keyremap.fish"
+	".local/bin"
 )
 
 for dotfile in "${DOTFILES[@]}"; do
