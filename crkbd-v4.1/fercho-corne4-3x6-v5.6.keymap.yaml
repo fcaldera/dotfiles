@@ -1,0 +1,64 @@
+# Keymap-drawer: A visualizer for keyboard keymaps  
+# https://keymap-drawer.streamlit.app/
+layout:
+  qmk_keyboard: crkbd/rev4_1
+  layout_name: LAYOUT_split_3x6_3
+layers:
+  DEF:
+    - ["Esc", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", $$mdi:backspace-outline$$]
+    - ["Alt", "A", "S", "D", "F", "G", "H", "J", "K", "L", ";", "Alt"]
+    - ["Shift", "Z", "X", "C", "V", "B", "N", "M", ",", ".", "/", "Shift"]
+    - {h: Alt, t: Del }
+    - {h: Ctrl, t: $$mdi:keyboard-tab$$}
+    - {h: NAV, t: Esc}
+    - {h: SYM, t: $$mdi:backspace-outline$$}
+    - $$mdi:keyboard-space$$
+    - {h: Gui, t: $$mdi:keyboard-return$$}
+  NAV:
+    - [{t: "Esc", type: trans}, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, {t: $$mdi:backspace-outline$$, type: trans}]
+    - [{t: "Alt", type: trans}, "OSM Shift", "OSM Alt", "OSM Ctrl", "OSM Gui", null, $$mdi:chevron-left$$, $$mdi:chevron-down$$, $$mdi:chevron-up$$, $$mdi:chevron-right$$, "Caps Lock", {t: "Alt", type: trans}] 
+    - [{t: "Shift", type: trans}, null, null, null, null, null, null, null, ",", ".", null, {t: "Shift", type: trans}]
+    - {h: Alt, t: Del }
+    - {h: Ctrl, t: $$mdi:keyboard-tab$$}
+    - {type: held}
+    - {h: MEDIA, t: $$mdi:backspace-outline$$}
+    - $$mdi:keyboard-space$$
+    - {h: Gui, t: $$mdi:keyboard-return$$}
+  SYM:
+    - [{t: "Esc", type: trans}, "[", "]", "{", "}", "%", "#", "*", "'", "-", "+", {t: $$mdi:backspace-outline$$, type: trans}]
+    - [{t: "Alt", type: trans}, "!", "=", "(", ")", "$", "^", "OSM GUI", "OSM Ctrl", "OSM Alt", "OSM Shift", {t: "Alt", type: trans}]
+    - [{t: "Shift", type: trans}, "<", "|", "-", ">", "\\", "&", "_", "/", "~", "€", {t: "Shift", type: trans}]
+    - {h: Alt, t: Del }
+    - {h: Ctrl, t: $$mdi:keyboard-tab$$}
+    - {h: NUM, t: Esc}
+    - {type: held}
+    - $$mdi:keyboard-space$$
+    - {h: Gui, t: $$mdi:keyboard-return$$}
+  NUM:
+    - [null, "€", "#", "$", "%", null, "/", "7", "8", "9", "-", null]
+    - [null, null, null, "(", ")", null, "*", "4", "5", "6", "+", null]
+    - [null, null, null, null, null, null, "0", "1", "2", "3", ".", null]
+    - {h: Alt, t: Del }
+    - {h: Ctrl, t: $$mdi:keyboard-tab$$}
+    - {type: held}
+    - {h: SYM, t: $$mdi:backspace-outline$$, type: ghost}
+    - $$mdi:keyboard-space$$
+    - {h: Gui, t: $$mdi:keyboard-return$$}
+  MEDIA:
+    - ["Reboot", null, "RBG M+","RGB TOG", "RGB M-", null, null, "Bri -", null, "Bri +", null, null]
+    - [null, null, "RGB Hue+", "RGB Sat+", "RGB Bri+", null, null, "Vol -", "Mute", "Vol +", null, null]
+    - [null, null, "RGB Hue-", "RGB Sat-", "RGB Bri-", null, null, $$mdi:skip-previous$$, $$mdi:play-pause$$, $$mdi:skip-next$$, null, null]
+    - {h: Alt, t: Del }
+    - {h: Ctrl, t: $$mdi:keyboard-tab$$}
+    - {type: held}
+    - {type: held}
+    - $$mdi:keyboard-space$$
+    - {h: Gui, t: $$mdi:keyboard-return$$}
+combos:
+  - {p: [2, 3], k: "@", l: ["DEF"]}
+  - {p: [3, 4], k: "`", l: ["DEF"]}
+  - {p: [7, 8], k: "\"", l: ["DEF"]}
+  - {p: [15, 16], k: "?", l: ["DEF"]}
+  - {p: [19, 20], k: ":", l: ["DEF"]}
+draw_config:
+  glyph_tap_size: 18
