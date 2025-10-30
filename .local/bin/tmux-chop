@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+branch_name="$1"
+dir_name=$(echo "$branch_name" | tr '/ ' '-' | tr -cd '[:alnum:]._-')
+session_name=$(echo "$dir_name" | tr -d '.')
+
+if git worktree list --porcelain | grep -q "^branch refs/heads/$branch_name$"; then
+  echo "Worktree for branch '$branch_name' already exists"
+  exit 1
+fi
+
+# add a new worktree
+git worktree add -b "$branch_name" "$dir_name"
+
+# copy shared files
+# TODO: make it configurable
+cp ./prelive/.npmrc ./prelive/.env "$dir_name"
+
+# create a tmux session
+tmux new -ds $session_name -c "$dir_name" -n editor "nvim"
+
+# create the rest of windows for the session
+tmux neww -t "$session_name" -c "$dir_name" -n terminal
+tmux neww -t "$session_name" -c "$dir_name" -n server
+tmux neww -t "$session_name" -c "$dir_name" -n ai-chat "claude"
+tmux neww -t "$session_name" -c "$dir_name" -n database "pgcli postgresql://root:root@localhost:5432/pis"
+
+if [ -n "$TMUX" ]; then
+  tmux switch-client -t "$session_name:0"
+else
+  tmux attach-session -t "$session_name:0"
+fi
