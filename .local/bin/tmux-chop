@@ -1,31 +1,34 @@
 #!/usr/bin/env bash
 
+# IDEAS
+# [ ] use .tmux file for the session windows (?)
+
 branch_name="$1"
+
+if [[ -z $branch_name ]]; then
+  branch_name=$(git branch -a | fzf | tr -d '+*' | xargs)
+fi
+
+[[ -z "$branch_name" ]] && exit 0
+
 dir_name=$(echo "$branch_name" | tr '/ ' '-' | tr -cd '[:alnum:]._-')
 session_name=$(echo "$dir_name" | tr -d '.')
 
-if git worktree list --porcelain | grep -q "^branch refs/heads/$branch_name$"; then
-  echo "Worktree for branch '$branch_name' already exists"
-  exit 1
+if ! git worktree list --porcelain | grep -q "^branch refs/heads/$branch_name$"; then
+  git worktree add -b "$branch_name" "$dir_name"
+  cp ./prelive/.npmrc ./prelive/.env "$dir_name"
 fi
 
-# add a new worktree
-git worktree add -b "$branch_name" "$dir_name"
+if ! tmux has-session -t "$session_name" 2>/dev/null; then
+  tmux new -ds $session_name -c "$dir_name" -n editor "nvim"
 
-# copy shared files
-# TODO: make it configurable
-cp ./prelive/.npmrc ./prelive/.env "$dir_name"
+  tmux neww -t "$session_name" -c "$dir_name" -n terminal
+  tmux neww -t "$session_name" -c "$dir_name" -n server
+  tmux neww -t "$session_name" -c "$dir_name" -n ai-chat "claude"
+  tmux neww -t "$session_name" -c "$dir_name" -n database "pgcli postgresql://root:root@localhost:5432/pis"
+fi
 
-# create a tmux session
-tmux new -ds $session_name -c "$dir_name" -n editor "nvim"
-
-# create the rest of windows for the session
-tmux neww -t "$session_name" -c "$dir_name" -n terminal
-tmux neww -t "$session_name" -c "$dir_name" -n server
-tmux neww -t "$session_name" -c "$dir_name" -n ai-chat "claude"
-tmux neww -t "$session_name" -c "$dir_name" -n database "pgcli postgresql://root:root@localhost:5432/pis"
-
-if [ -n "$TMUX" ]; then
+if [[ -n "$TMUX" ]]; then
   tmux switch-client -t "$session_name:0"
 else
   tmux attach-session -t "$session_name:0"
