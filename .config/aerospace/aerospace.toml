@@ -197,7 +197,7 @@ if.app-id = 'app.zen-browser.zen'
 run = 'move-node-to-workspace I'
 
 [[on-window-detected]]
-if.app-id = 'com.tinyspeck.slackmacgap '
+if.app-name-regex-substring = 'Slack'
 run = 'move-node-to-workspace O'
 
 [[on-window-detected]]
