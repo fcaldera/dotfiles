@@ -103,7 +103,13 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- Disable anyoing legacy navigation
+-- open help in vertical split
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "help",
+  command = "wincmd L",
+})
+
+-- Disable annoying legacy navigation
 vim.keymap.set("n", "Q", "<nop>")
 
 -- vim: ts=2 sts=2 sw=2 et
