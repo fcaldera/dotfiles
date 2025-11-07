@@ -59,7 +59,7 @@ opt.scrolloff = 10
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s)
 -- See `:help 'confirm'`
-vim.opt.confirm = true
+opt.confirm = true
 
 -- [[ Additional Settings ]]
 -- Options below were added by me and not present in kickstart.nvim
@@ -80,12 +80,18 @@ opt.colorcolumn = "80"
 opt.wrap = false
 
 -- Always use block cursor
--- opt.guicursor = ""
+opt.guicursor = ""
 
 -- Always show tabline
 opt.showtabline = 2
 
 -- Floating windows border style
 -- opt.winborder = "rounded"
+
+-- Folding
+opt.foldcolumn = "0"
+opt.foldlevel = 99
+opt.foldlevelstart = 99
+opt.foldenable = true
 
 -- vim: ts=2 sts=2 sw=2 et

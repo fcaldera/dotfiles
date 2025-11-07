@@ -163,6 +163,12 @@ return {
       --  So, we create new capabilities with blink.cmp, and then broadcast that to the servers.
       local capabilities = require("blink.cmp").get_lsp_capabilities()
 
+      -- Enable folding capabilities via LSP
+      capabilities.textDocument.foldingRange = {
+        dynamicRegistration = false,
+        lineFoldingOnly = true,
+      }
+
       local servers = {
         bashls = {},
         cssls = {
