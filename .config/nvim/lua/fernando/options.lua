@@ -82,9 +82,6 @@ opt.wrap = false
 -- Always use block cursor
 -- opt.guicursor = ""
 
--- Don't have `o` add a comment
-opt.formatoptions:remove("o")
-
 -- Always show tabline
 opt.showtabline = 2
 
