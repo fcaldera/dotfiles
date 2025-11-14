@@ -80,7 +80,7 @@ opt.colorcolumn = "80"
 opt.wrap = false
 
 -- Always use block cursor
-opt.guicursor = ""
+-- opt.guicursor = ""
 
 -- Always show tabline
 opt.showtabline = 2
