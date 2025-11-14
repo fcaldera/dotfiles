@@ -38,6 +38,9 @@ brew install docker
 brew install colima
 ./install-docker-compose.sh
 
+# bun
+curl -fsSL https://bun.sh/install | bash
+
 # Fonts
 brew install font-input
 brew install font-hasklig
