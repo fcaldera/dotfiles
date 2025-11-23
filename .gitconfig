@@ -15,12 +15,12 @@
 	visual = !gitk
 	alias = config --get-regexp '^alias\\.'
 	fa = fetch --all
-	cm = checkout master
+	cm = checkout main
 	rc = rebase --continue
 	ca = commit --amend --no-edit
 [push]
 	autoSetupRemote = true
 [init]
-	defaultBranch = master
+	defaultBranch = main
 [core]
 	editor = nvim
