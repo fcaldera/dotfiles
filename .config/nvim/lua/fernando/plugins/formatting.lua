@@ -48,6 +48,7 @@ return {
       sh = { "shfmt" },
       handlebars = { "prettier" },
       ejs = { "prettier" },
+      sql = { "sqruff" },
     },
     formatters = {
       prettier = {
