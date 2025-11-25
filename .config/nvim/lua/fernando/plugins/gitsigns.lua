@@ -1,3 +1,4 @@
+---@diagnostic disable: param-type-mismatch
 return {
   -- Adds git related signs to the gutter, as well as utilities for managing changes
   "lewis6991/gitsigns.nvim",
@@ -60,8 +61,8 @@ return {
 
       map("n", "<leader>hQ", function()
         gitsigns.setqflist("all")
-      end)
-      map("n", "<leader>hq", gitsigns.setqflist)
+      end, { desc = "git [Q]uickfix all hunks" })
+      map("n", "<leader>hq", gitsigns.setqflist, { desc = "git [q]uickfix buffer hunks" })
 
       -- Toggles
       map("n", "<leader>tb", gitsigns.toggle_current_line_blame, { desc = "[T]oggle git show [b]lame line" })
