@@ -15,6 +15,7 @@ DOTFILES=(
 	".config/joshuto"
 	".config/fish/config.fish"
 	".config/fish/functions/keyremap.fish"
+	".config/fish/functions/fish_user_key_bindings.fish"
 	".local/bin"
 )
 

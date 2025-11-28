@@ -13,7 +13,8 @@ fi
 session_name=$(basename "$dir_name" | tr . _)
 
 if ! tmux has-session -t "$session_name" 2>/dev/null; then
-  tmux new -ds $session_name -c "$dir_name" -n editor "nvim"
+  tmux new -ds $session_name -c "$dir_name" -n editor
+  tmux send-keys -t "$session_name:editor" "nvim" c-M
 
   tmux neww -t "$session_name" -c "$dir_name" -n terminal
   tmux neww -t "$session_name" -c "$dir_name" -n server
