@@ -30,8 +30,4 @@ zoxide init fish --cmd cd | source
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
-# key bindings
-set -g fish_key_bindings fish_vi_key_bindings
-bind -M fish_vi_command \$ end-of-line
-
 set fish_cursor_insert block 
