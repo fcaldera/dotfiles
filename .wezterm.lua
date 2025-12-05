@@ -15,7 +15,7 @@ if handle then
 end
 
 -- For my personal MacBook
-if string.find(hostname, ".local") then
+if false and string.find(hostname, ".local") then
 	config.font = wezterm.font("Monaspace Krypton")
 	config.font_rules = { {
 		italic = true,
@@ -45,5 +45,11 @@ config.harfbuzz_features = {
 }
 
 config.color_scheme = "rose-pine"
+
+config.disable_default_key_bindings = true
+config.keys = {
+	{ key = "P", mods = "CTRL", action = wezterm.action.ActivateCommandPalette },
+	{ key = "L", mods = "CTRL", action = wezterm.action.ShowDebugOverlay },
+}
 
 return config
