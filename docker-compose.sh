@@ -3,6 +3,7 @@ set -euo pipefail
 
 # Determine architecture
 ARCH="$(uname -m)"
+
 case "$ARCH" in
   x86_64) ARCH_TAG="x86_64" ;;
   arm64)  ARCH_TAG="aarch64" ;;

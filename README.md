@@ -5,8 +5,8 @@ Configuration and tools for my macOS dev machine.
 Run in following order:
 
 ```sh
-sudo bash prepare.sh
-sudo bash setup.sh
+./dotfiles install
+./dotfiles apply
 ```
 
 ## Notes

@@ -6,7 +6,7 @@ abbr -a chop 'tmux-chop'
 abbr -a osdm "osascript -e 'tell application \"System Events\" to tell appearance preferences to set dark mode to not dark mode'"
 
 # Environment
-set -x ATAC_KEY_BINDINGS ~/.config/atac/key_bindings.toml
+# set -x ATAC_KEY_BINDINGS ~/.config/atac/key_bindings.toml
 
 # pnpm
 if test -e ~/Library/pnpm 
@@ -25,7 +25,7 @@ else if test -f /opt/homebrew/opt/asdf/libexec/asdf.fish
 end
 
 fzf --fish | source
-zoxide init fish --cmd cd | source
+zoxide init fish | source
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
