@@ -13,7 +13,8 @@ DOTFILES=(
 	".config/aerospace"
 	".config/fish/config.fish"
 	".config/fish/functions/fish_user_key_bindings.fish"
-	".local/bin"
+	".local/bin/tmux-chop"
+	".local/bin/tmux-auto"
 )
 
 show_help() {
@@ -39,6 +40,8 @@ cmd_apply() {
 		src="${PWD}/${dotfile}"
 		target="${HOME}/${dotfile}"
 
+		if $verbose; then echo "Linking $src -> $target"; fi
+
 		if ! $dry_run; then
 			mkdir -p "$(dirname "$target")"
 			[[ -L $target ]] && rm -rf "$target"
@@ -49,7 +52,7 @@ cmd_apply() {
 }
 
 cmd_install() {
-	if [[ $(command -v brew) == "" ]]; then
+	if ! command -v brew >/dev/null 2>&1; then
 		echo "Installing Homebrew..."
 		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 		eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -72,9 +75,10 @@ cmd_install() {
 	fisher install pure-fish/pure
 	"
 
-	if [[ $(command -v uv) == "" ]]; then
+	if ! command -v uv >/dev/null 2>&1; then
 		echo "Installing uv (python)"
 		curl -LsSf https://astral.sh/uv/install.sh | sh
+		uv generate-shell-completion fish >"$HOME/.config/fish/completions/uv.fish"
 	fi
 
 	echo "Installing uv packages..."
@@ -85,7 +89,7 @@ cmd_install() {
 	asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 	asdf install nodejs
 
-	if [[ $(command -v bun) == "" ]]; then
+	if ! command -v bun >/dev/null 2>&1; then
 		echo "Installing bun..."
 		curl -fsSL https://bun.sh/install | bash
 	fi
@@ -108,6 +112,7 @@ while getopts ":nh" opt; do
 	n) dry_run=true ;;
 	\?)
 		echo "Invalid option: -$OPTARG"
+		show_help
 		exit 1
 		;;
 	esac
