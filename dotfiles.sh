@@ -120,10 +120,11 @@ done
 shift $((OPTIND - 1))
 
 # Dispatch subcommand
-case "${1:-help}" in
+case "${1:-install}" in
 install)
 	shift
 	cmd_install "$@"
+	cmd_apply "$@"
 	;;
 apply)
 	shift
