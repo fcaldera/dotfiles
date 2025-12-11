@@ -46,11 +46,11 @@ brew "docker"
 brew "colima"
 
 # fonts
-brew "font-input"
-brew "font-hasklig"
-brew "font-fira-code"
-brew "font-monaspace"
-brew "font-jetbrains-mono"
+cask "font-input"
+cask "font-hasklig"
+cask "font-fira-code"
+cask "font-monaspace"
+cask "font-jetbrains-mono"
 
 # apps
 cask "wezterm"
