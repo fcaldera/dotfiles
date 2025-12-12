@@ -31,5 +31,4 @@ curl -#SL "$URL" -o "$PLUGIN_DIR/docker-compose"
 chmod +x "$PLUGIN_DIR/docker-compose"
 
 # Verify
-echo "✅ Installed docker compose plugin:"
 docker compose version

@@ -26,12 +26,12 @@ ssh-add "$SSH_IDENTITY"
 
 # Ensure SSH config contains GitHub block
 if [[ ! -f "$SSH_CONFIG" ]] || ! grep -q "^$SSH_HOST_BLOCK" "$SSH_CONFIG"; then
-	cat <<EOF >>"$SSH_CONFIG"
+	cat <<-EOF >>"$SSH_CONFIG"
 
-$SSH_HOST_BLOCK
-  AddKeysToAgent yes
-  IdentityFile $SSH_IDENTITY
-EOF
+		$SSH_HOST_BLOCK
+		  AddKeysToAgent yes
+		  IdentityFile $SSH_IDENTITY
+	EOF
 fi
 
 if [[ "${1:-}" == "-i" ]]; then
@@ -42,4 +42,13 @@ if [[ "${1:-}" == "-i" ]]; then
 
 	gh auth login
 	gh ssh-key add "$SSH_IDENTITY.pub" --type signing || true
+else
+	cat <<-EOF
+		SSH keys for GitHub are now available. 
+		To your identify to github.com:
+
+		  gh auth login
+		  gh ssh-key add "$SSH_IDENTITY.pub" --type signing
+
+	EOF
 fi
