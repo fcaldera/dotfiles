@@ -1,6 +1,7 @@
 tap "nikitabobko/tap"
 tap "yqrashawn/goku"
 tap "felixkratz/formulae"
+tap "oven-sh/bun"
 
 # command-line tools
 brew "fzf"
@@ -13,7 +14,6 @@ brew "entr"
 brew "zoxide"
 brew "fd"
 brew "bat"
-brew "yqrashawn/goku/goku"
 brew "felixkratz/formulae/borders"
 
 # terminal apps
@@ -40,6 +40,7 @@ brew "stylua"
 brew "tree-sitter-cli"
 brew "erlang"
 brew "elixir"
+brew "oven-sh/bun/bun"
 
 # package managers
 brew "asdf"
@@ -50,20 +51,14 @@ brew "docker"
 brew "colima"
 
 # fonts
-# cask "font-input"
-# cask "font-hasklig"
-# cask "font-fira-code"
-cask "font-monaspace"
 cask "font-jetbrains-mono"
 
 # apps
 cask "wezterm"
 cask "spotify"
 cask "raycast"
-cask "nikitabobko/tap/aerospace"
 cask "appcleaner"
 cask "google-chrome"
 cask "homerow"
 cask "bruno"
-# cask "karabiner-elements"
-
+cask "nikitabobko/tap/aerospace"

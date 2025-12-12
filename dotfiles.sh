@@ -97,13 +97,6 @@ cmd_install() {
 	asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 	asdf install nodejs
 
-	if ! command -v bun >/dev/null 2>&1; then
-		echo "Installing bun..."
-		curl -fsSL https://bun.sh/install | bash
-		export PATH="$HOME/.bun/bin:$PATH"
-		hash -r
-	fi
-
 	echo "Installing js packages..."
 	bun add taskbook # https://github.com/klaudiosinani/taskbook
 
@@ -116,7 +109,7 @@ cmd_install() {
 }
 
 # parse global options
-while getopts ":nh" opt; do
+while getopts ":nvh" opt; do
 	case $opt in
 	h) show_help ;;
 	n) dry_run=true ;;
