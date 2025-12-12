@@ -21,4 +21,4 @@ if [ ! -d "$HOME/projects/dotfiles" ]; then
 fi
 
 cd $HOME/projects/dotfiles
-sudo ./dotfiles.sh install
+./dotfiles.sh install -v
