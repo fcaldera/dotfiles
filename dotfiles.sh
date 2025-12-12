@@ -73,8 +73,7 @@ cmd_install() {
 
 		fish -c "
 		set -Ux HOMEBREW_NO_ENV_HINTS 1
-		fish_add_path /opt/homebrew/sbin
-		fish_add_path /opt/homebrew/bin
+		eval "$(/opt/homebrew/bin/brew shellenv fish)"
 		fisher install pure-fish/pure
 		"
 	else
@@ -106,7 +105,7 @@ cmd_install() {
 	fi
 
 	echo "Installing js packages..."
-	bun add taskbook # https://github.com/klaudiosinani/taskbook SSH
+	bun add taskbook # https://github.com/klaudiosinani/taskbook
 
 	# scripts
 	./github.sh
