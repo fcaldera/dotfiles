@@ -2,11 +2,8 @@
 
 Configuration and tools for my macOS dev machine.
 
-Run in following order:
-
 ```sh
-./dotfiles install
-./dotfiles apply
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/fcaldera/dotfiles/HEAD/install.sh)"
 ```
 
 ## Notes

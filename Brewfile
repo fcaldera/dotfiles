@@ -50,9 +50,9 @@ brew "docker"
 brew "colima"
 
 # fonts
-cask "font-input"
-cask "font-hasklig"
-cask "font-fira-code"
+# cask "font-input"
+# cask "font-hasklig"
+# cask "font-fira-code"
 cask "font-monaspace"
 cask "font-jetbrains-mono"
 
@@ -61,9 +61,9 @@ cask "wezterm"
 cask "spotify"
 cask "raycast"
 cask "nikitabobko/tap/aerospace"
-cask "karabiner-elements"
 cask "appcleaner"
 cask "google-chrome"
 cask "homerow"
 cask "bruno"
+# cask "karabiner-elements"
 
