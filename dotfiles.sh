@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
+sudo -v
+
 dry_run=false
+verbose=false
 
 DOTFILES=(
 	".gitconfig"
@@ -57,27 +60,33 @@ cmd_install() {
 		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 		eval "$(/opt/homebrew/bin/brew shellenv)"
 	else
-		echo "Updating Homebrew..."
 		brew update
 	fi
 
 	echo "Installing brew packages..."
 	brew bundle install
 
-	echo "Configuring fish shell..."
-	echo $(which fish) | sudo tee -a /etc/shells
-	chsh -s $(which fish)
+	if command -v fish >/dev/null 2>&1; then
+		echo "Configuring fish shell..."
+		echo $(which fish) | sudo tee -a /etc/shells
+		chsh -s $(which fish)
 
-	fish -c "
-	set -Ux HOMEBREW_NO_ENV_HINTS 1
-	fish_add_path /opt/homebrew/sbin
-	fish_add_path /opt/homebrew/bin
-	fisher install pure-fish/pure
-	"
+		fish -c "
+		set -Ux HOMEBREW_NO_ENV_HINTS 1
+		fish_add_path /opt/homebrew/sbin
+		fish_add_path /opt/homebrew/bin
+		fisher install pure-fish/pure
+		"
+	else
+		echo "fish shell not found."
+	fi
 
 	if ! command -v uv >/dev/null 2>&1; then
 		echo "Installing uv (python)"
 		curl -LsSf https://astral.sh/uv/install.sh | sh
+		export PATH="$HOME/.local/bin:$PATH"
+		hash -r
+
 		uv generate-shell-completion fish >"$HOME/.config/fish/completions/uv.fish"
 	fi
 
@@ -92,6 +101,8 @@ cmd_install() {
 	if ! command -v bun >/dev/null 2>&1; then
 		echo "Installing bun..."
 		curl -fsSL https://bun.sh/install | bash
+		export PATH="$HOME/.bun/bin:$PATH"
+		hash -r
 	fi
 
 	echo "Installing js packages..."
@@ -110,6 +121,7 @@ while getopts ":nh" opt; do
 	case $opt in
 	h) show_help ;;
 	n) dry_run=true ;;
+	v) verbose=true ;;
 	\?)
 		echo "Invalid option: -$OPTARG"
 		show_help

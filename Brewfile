@@ -1,3 +1,7 @@
+tap "nikitabobko/tap"
+tap "yqrashawn/goku"
+tap "felixkratz/formulae"
+
 # command-line tools
 brew "fzf"
 brew "gh"
@@ -10,7 +14,7 @@ brew "zoxide"
 brew "fd"
 brew "bat"
 brew "yqrashawn/goku/goku"
-brew "FelixKratz/formulae/borders"
+brew "felixkratz/formulae/borders"
 
 # terminal apps
 brew "neovim"
