@@ -1,18 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-sudo -v
-
 if ! command -v brew >/dev/null 2>&1; then
+	sudo -v
 	echo "Installing Homebrew..."
 	NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	eval "$(/opt/homebrew/bin/brew shellenv)"
 else
 	brew update
-fi
-
-if ! command -v git >/dev/null 2>&1; then
-	brew install git
 fi
 
 if [ ! -d "$HOME/projects/dotfiles" ]; then
@@ -21,4 +16,5 @@ if [ ! -d "$HOME/projects/dotfiles" ]; then
 fi
 
 cd $HOME/projects/dotfiles
-./dotfiles.sh install -v
+./dotfiles.sh -v install
+./dotfiles.sh -v apply

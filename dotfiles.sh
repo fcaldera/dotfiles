@@ -50,21 +50,19 @@ cmd_apply() {
 
 cmd_install() {
 	if ! command -v brew >/dev/null 2>&1; then
-		sudo -v
 		echo "Installing Homebrew..."
 		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 		eval "$(/opt/homebrew/bin/brew shellenv)"
-	else
-		brew update
 	fi
 
+	sudo -v
 	echo "Installing brew packages..."
 	brew bundle install
 
 	if command -v fish >/dev/null 2>&1; then
 		sudo -v
 		echo "Configuring fish shell..."
-		echo $(which fish) | tee -a /etc/shells
+		echo $(which fish) | sudo tee -a /etc/shells
 		chsh -s $(which fish)
 
 		fish -c "
@@ -119,11 +117,10 @@ done
 shift $((OPTIND - 1))
 
 # Dispatch subcommand
-case "${1:-install}" in
+case "${1:-help}" in
 install)
 	shift
 	cmd_install "$@"
-	cmd_apply "$@"
 	;;
 apply)
 	shift
