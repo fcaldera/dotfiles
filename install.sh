@@ -17,7 +17,7 @@ fi
 
 if [ ! -d "$HOME/projects/dotfiles" ]; then
 	mkdir -p $HOME/projects
-	git clone https://github.com/fcaldera/dotfiles $HOME/projects/dotfiles
+	git clone https://github.com/fedcho/dotfiles $HOME/projects/dotfiles
 fi
 
 cd $HOME/projects/dotfiles
