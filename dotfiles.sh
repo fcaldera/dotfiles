@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-sudo -v
-
-dry_run=false
 verbose=false
 
 DOTFILES=(
@@ -31,7 +28,6 @@ Subcommands:
 
 Global flags:
   -v         Verbose output
-  -n         Dry run (show commands only)
 
 EOF
 
@@ -45,17 +41,16 @@ cmd_apply() {
 
 		if $verbose; then echo "Linking $src -> $target"; fi
 
-		if ! $dry_run; then
-			mkdir -p "$(dirname "$target")"
-			[[ -L $target ]] && rm -rf "$target"
-			ln -sf "$src" "$target"
-		fi
+		mkdir -p "$(dirname "$target")"
+		[[ -L $target ]] && rm -rf "$target"
+		ln -sf "$src" "$target"
 	done
 	echo "Dotfiles applied."
 }
 
 cmd_install() {
 	if ! command -v brew >/dev/null 2>&1; then
+		sudo -v
 		echo "Installing Homebrew..."
 		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 		eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -67,8 +62,9 @@ cmd_install() {
 	brew bundle install
 
 	if command -v fish >/dev/null 2>&1; then
+		sudo -v
 		echo "Configuring fish shell..."
-		echo $(which fish) | sudo tee -a /etc/shells
+		echo $(which fish) | tee -a /etc/shells
 		chsh -s $(which fish)
 
 		fish -c "
@@ -109,10 +105,9 @@ cmd_install() {
 }
 
 # parse global options
-while getopts ":nvh" opt; do
+while getopts ":vh" opt; do
 	case $opt in
 	h) show_help ;;
-	n) dry_run=true ;;
 	v) verbose=true ;;
 	\?)
 		echo "Invalid option: -$OPTARG"
