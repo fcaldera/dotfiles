@@ -45,7 +45,7 @@ if [[ "${1:-}" == "-i" ]]; then
 else
 	cat <<-EOF
 		SSH keys for GitHub are now available. 
-		To your identify to github.com:
+		Add your key to github.com with:
 
 		  gh auth login
 		  gh ssh-key add "$SSH_IDENTITY.pub" --type signing
