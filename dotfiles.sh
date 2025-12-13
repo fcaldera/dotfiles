@@ -55,12 +55,10 @@ cmd_install() {
 		eval "$(/opt/homebrew/bin/brew shellenv)"
 	fi
 
-	sudo -v
 	echo "Installing brew packages..."
 	brew bundle install
 
 	if command -v fish >/dev/null 2>&1; then
-		sudo -v
 		echo "Configuring fish shell..."
 		echo $(which fish) | sudo tee -a /etc/shells
 		chsh -s $(which fish)
