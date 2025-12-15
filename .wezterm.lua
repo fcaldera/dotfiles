@@ -47,9 +47,18 @@ config.harfbuzz_features = {
 config.color_scheme = "rose-pine"
 
 config.disable_default_key_bindings = true
+
 config.keys = {
 	{ key = "P", mods = "CTRL", action = wezterm.action.ActivateCommandPalette },
 	{ key = "L", mods = "CTRL", action = wezterm.action.ShowDebugOverlay },
+	{ key = "c", mods = "SUPER", action = wezterm.action.CopyTo("Clipboard") },
+	{ key = "v", mods = "SUPER", action = wezterm.action.PasteFrom("Clipboard") },
+	{ key = "-", mods = "CTRL", action = wezterm.action.DecreaseFontSize },
+	{ key = "=", mods = "CTRL", action = wezterm.action.IncreaseFontSize },
+	{ key = "0", mods = "CTRL", action = wezterm.action.ResetFontSize },
+	{ key = "q", mods = "CMD", action = wezterm.action.QuitApplication },
+	{ key = "w", mods = "CMD", action = wezterm.action.CloseCurrentTab({ confirm = true }) },
+	{ key = "r", mods = "CMD", action = wezterm.action.ReloadConfiguration },
 }
 
 return config
