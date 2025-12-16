@@ -13,6 +13,7 @@ DOTFILES=(
 	".config/aerospace"
 	".config/fish/config.fish"
 	".config/fish/functions/fish_user_key_bindings.fish"
+	".config/wezterm"
 	".local/bin/tmux-chop"
 	".local/bin/tmux-auto"
 )

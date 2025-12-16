@@ -44,7 +44,7 @@ config.harfbuzz_features = {
 	"cv16", -- Q
 }
 
-config.color_scheme = "rose-pine"
+config.color_scheme = "melange"
 
 config.disable_default_key_bindings = true
 
